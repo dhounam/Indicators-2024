@@ -17,8 +17,8 @@
 	<layout>
 
 		<!-- BACKGROUND BOX (note: y was 201; changed to 210 2.10.23) -->
- 		<backBox x="0" y="210"
-			width="160" height="210"
+ 		<backBox x="0" y="200"
+			width="160" height="200"
 			fillC="0" fillM="0" fillY="0" fillK="0"
 			strokeC="0" strokeM="0" strokeY="0" strokeK="0"/>
 
@@ -41,9 +41,9 @@
 			 If false, tinting is section-based, as defined below in data node
 			 But note that if data node's "explicit" property is true, tinting is determined by data.explicitStyles...
 			 -->
-		<backTint exists="true" everyOther="false"
+		<backTint exists="false" everyOther="false"
 			fillC="9" fillM="0" fillY="0" fillK="6"
-			width="160" height="7.6" firstHeight="8.275" offset="2.3" />
+			width="160" height="6.5" firstHeight="7" offset="2.3" was="2.6" />
 
 	</layout>
 	<!-- LAYOUT ends -->
@@ -54,14 +54,16 @@
 
 	  <!-- HEADER 1 -->
 	  <header name="header1">
-		<fontName>EconSansMed</fontName>
-		<fontSize>8.5</fontSize>
-		<leading>10</leading>
+		<fontName>EconomistSans_Medium</fontName>
+		<fontSize>9</fontSize>
+		<leading>7.5</leading>
 		<hScale>100</hScale>
 		<baseline>0</baseline>
 		<footnotes fontSize="4" superscript="2"/>
 		<initialTab>false</initialTab>
+		<indent>0</indent>
 		<fill>black</fill>
+    <exists>true</exists>
 		<subRanges>
 			<!-- subRange attributes can override previous
 				tab- 	position: a number
@@ -71,48 +73,54 @@
 	  </header>
 
 	  <header name="header2">
-		  <fontName>EconSansCndMed</fontName>
-		  <fontSize>6.5</fontSize>
+		  <fontName>EconomistSans_Medium</fontName>
+		  <fontSize>6</fontSize>
 		  <leading>15</leading>
 			<footnotes fontSize="4" superscript="2"/>
 		  <hScale>100</hScale>
 		  <baseline>0</baseline>
 		  <initialTab>false</initialTab>
+			<indent>0</indent>
 			<fill>black</fill>
+      <exists>true</exists>
 		  <subRanges>
 				<subRange position="0" alignment="Left" />
 		  </subRanges>
 	  </header>
 
 	  <header name="header3">
-		  <fontName>EconSansCndReg</fontName>
+		  <fontName>EconomistSans_Light</fontName>
 		  <fontSize>6</fontSize>
 		  <leading>3</leading>
 			<footnotes fontSize="4" superscript="2"/>
 		  <hScale>100</hScale>
 		  <baseline>0</baseline>
 		  <initialTab>true</initialTab>
+			<indent>0</indent>
 			<fill>grey</fill>
+      <exists>true</exists>
 		  <subRanges>
 				<subRange position="138" alignment="Center" />
 		  </subRanges>
 	  </header>
 
 	  <header name="header4">
-		  <fontName>EconSansCndReg</fontName>
+		  <fontName>EconomistSans_Light</fontName>
 		  <fontSize>6</fontSize>
 		  <leading>7</leading>
-		<footnotes fontSize="4" superscript="2"/>
+	  	<footnotes fontSize="4" superscript="2"/>
 		  <hScale>100</hScale>
 		  <baseline>0</baseline>
+      <exists>true</exists>
 		  <rules>
-				<headerRule width="0.3" style="Solid" offset="3"
-				  	strokeC="0" strokeM="0" strokeY="0" strokeK="100"
+				<headerRule width="0.25" style="Solid" offset="3"
+          strokeC="0" strokeM="0" strokeY="0" strokeK="100"
 					dotLength="0" dotGap="0"
 					start="0" end="160"
 					/>
 			</rules>
 		  <initialTab>false</initialTab>
+			<indent>0</indent>
 			<fill>black</fill>
 		  <subRanges>
 				<subRange position="0" alignment="Left" />
@@ -124,33 +132,17 @@
 		  </subRanges>
 	  </header>
 
-	  <!--header name="header5">
-		  <fontName>EconSansCndReg</fontName>
-		  <fontSize>7</fontSize>
-		  <leading>6</leading>
-		<footnotes fontSize="4" superscript="2"/>
-		  <hScale>100</hScale>
-		  <baseline>0</baseline>
-		  <initialTab>true</initialTab>
-		  <subRanges>
-			<subRange position="59" alignment="Center" />
-			<subRange position="95" alignment="Center" />
-			<subRange position="126" alignment="Center" fontName="EconSansCndReg" />
-			<subRange position="153" alignment="Center" fontName="EconSansCndReg" />
-		  </subRanges>
-	  </header-->
-
   </headers>
 
 
   <!-- DATA -->
   <data>
 		<!-- LEADING, TABS, H-SCALING, FONT NAME & SIZE, BASELINE, RULE-BELOW -->
-		<fontName>EconSansCndReg</fontName>
-		<fontSize>6.5</fontSize>
-		<firstLeading>9</firstLeading>
-		<leading>8.4</leading>
-		<indent>3</indent>
+		<fontName>EconomistSans_Light</fontName>
+		<fontSize>6</fontSize>
+		<firstLeading>8.5</firstLeading>
+		<leading>8.5</leading>
+		<indent>0</indent>
 		<footnotes fontSize="4" superscript="2"/>
 		<hScale>100</hScale>
 		<baseline>0</baseline>
@@ -165,13 +157,19 @@
 				 If explicit="true", rules are drawn according to the explicitRules node
 				 Otherwise, properties define ruler style for default lines, section ends and last line
 				 -->
-		<rules defaultRule="noRule" sectionRule="solidRule" finalRule="solidRule" >
+		<rules defaultRule="minorRule" sectionRule="solidRule" finalRule="solidRule" >
 			  <noRule width="0" style="None" offset="3.1" />
 			  <dotRule width="0.5" style="Dot" offset="3.1"
 				  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
 				  dotLength="0.01" dotGap="2.05"
 				  start="0" end="160"
 				/>
+        <!-- Added Feb'24: minor rule between rows -->
+        <minorRule width="0.25" style="Solid" offset="3.3" wasoffset="3.1"
+          strokeC="0" strokeM="0" strokeY="0" strokeK="25"
+          dotLength="0" dotGap="0"
+          start="0" end="160"
+        />
 			  <!-- Define rule below sections (section counts below) -->
 			  <dashRule width="0.3" style="Dash" offset="3.1"
 				  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
@@ -179,7 +177,7 @@
 				  start="0" end="160"
 				  />
 			  <!-- Define rule at bottom of data block -->
-			  <solidRule width="0.3" style="Solid" offset="3.1"
+			  <solidRule width="0.25" style="Solid" offset="3.3"
 				  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
 				  dotLength="0" dotGap="0"
 				  start="0" end="160"
@@ -198,21 +196,21 @@
 				Look at the output EPS to see how these styles affect the result...
 				-->
 		<explicitStyles>
-			<r ruleStyle="noRule" tint="true" initialTab="false" oneString="true" fontName="EconSansCndMed"/>
-			<r ruleStyle="noRule" tint="false" indentRule="0" initialTab="false" oneString="false" fontName="EconSansCndReg"/>
-			<r ruleStyle="noRule" tint="true" indentRule="0" initialTab="false" oneString="false" fontName="EconSansCndReg"/>
-			<r ruleStyle="noRule" tint="false" initialTab="false" oneString="false" fontName="EconSansCndMed"/>
-			<r ruleStyle="noRule" tint="true" indentRule="5" initialTab="false" oneString="false" fontName="EconSansCndReg"/>
-			<r ruleStyle="noRule" tint="false" indentRule="5" initialTab="false" oneString="false" fontName="EconSansCndReg"/>
-			<r ruleStyle="solidRule" tint="true" indentRule="0" initialTab="false" oneString="false" fontName="EconSansCndReg" rTweak="3"/>
-			<r ruleStyle="noRule" tint="true" indentRule="0" initialTab="false" oneString="true" fontName="EconSansCndMed" leading="11.4"/>
-			<r ruleStyle="solidRule" tint="false" indentRule="0" initialTab="false" oneString="false" fontName="EconSansCndReg" rTweak="3" />
-			<r ruleStyle="noRule" tint="true" initialTab="false" oneString="true" fontName="EconSansCndMed" leading="11.4"/>
-			<r ruleStyle="solidRule" tint="false" indentRule="0" initialTab="false" oneString="false" fontName="EconSansCndReg" rTweak="3" />
-			<r ruleStyle="noRule" tint="true" initialTab="false" oneString="true" fontName="EconSansCndMed" leading="11.4"/>
-			<r ruleStyle="solidRule" tint="false" indentRule="0" initialTab="false" oneString="false" fontName="EconSansCndReg" rTweak="3" />
-			<r ruleStyle="noRule" tint="true" initialTab="false" oneString="true" fontName="EconSansCndMed" leading="11.4"/>
-			<r ruleStyle="solidRule" tint="false" indentRule="0" initialTab="false" oneString="false" fontName="EconSansCndReg"/>
+      <r ruleStyle="noRule" tint="true" initialTab="false" oneString="true" fontName="EconomistSans_Medium"/>
+      <r ruleStyle="minorRule" tint="false" indentRule="0" initialTab="false" oneString="false" fontName="EconomistSans_Light"/>
+      <r ruleStyle="minorRule" tint="true" indentRule="0" initialTab="false" oneString="false" fontName="EconomistSans_Light"/>
+      <r ruleStyle="minorRule" tint="false" initialTab="false" oneString="false" fontName="EconomistSans_Medium"/>
+      <r ruleStyle="minorRule" tint="true" indentRule="0" initialTab="false" oneString="false" fontName="EconomistSans_Light"/>
+      <r ruleStyle="minorRule" tint="false" indentRule="0" initialTab="false" oneString="false" fontName="EconomistSans_Light"/>
+      <r ruleStyle="solidRule" tint="true" indentRule="0" initialTab="false" oneString="false" fontName="EconomistSans_Light" rTweak="3"/>
+      <r ruleStyle="minorRule" tint="true" indentRule="0" initialTab="false" oneString="true" fontName="EconomistSans_Medium" leading="11.5"/>
+      <r ruleStyle="solidRule" tint="false" indentRule="0" initialTab="false" oneString="false" fontName="EconomistSans_Light" rTweak="3" />
+      <r ruleStyle="minorRule" tint="true" initialTab="false" oneString="true" fontName="EconomistSans_Medium" leading="11.5"/>
+      <r ruleStyle="solidRule" tint="false" indentRule="0" initialTab="false" oneString="false" fontName="EconomistSans_Light" rTweak="3" />
+      <r ruleStyle="minorRule" tint="true" initialTab="false" oneString="true" fontName="EconomistSans_Medium" leading="11.5"/>
+      <r ruleStyle="solidRule" tint="false" indentRule="0" initialTab="false" oneString="false" fontName="EconomistSans_Light" rTweak="3" />
+      <r ruleStyle="minorRule" tint="true" initialTab="false" oneString="true" fontName="EconomistSans_Medium" leading="11.5"/>
+      <r ruleStyle="minorRule" tint="false" indentRule="0" initialTab="false" oneString="false" fontName="EconomistSans_Light"/>
 		</explicitStyles>
 
 		<subRanges>
@@ -239,10 +237,10 @@
   <!-- SOURCES AND FOOTNOTES
 		General "leading" is applied to para as a whole, then firstLeading to first line only -->
   <foot>
-		<fontName>EconSansCndLig</fontName>
+		<fontName>EconomistSans_Light</fontName>
 		<fontSize>6</fontSize>
-		<firstLeading>9</firstLeading>
-		<leading>7</leading>
+		<firstLeading>8.5</firstLeading>
+		<leading>8.5</leading>
 		<footnotes fontSize="6" superscript="0"/>
 		<hScale>100</hScale>
 		<baseline>0</baseline>

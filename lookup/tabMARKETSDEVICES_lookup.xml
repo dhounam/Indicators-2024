@@ -40,7 +40,7 @@
 			 If false, tinting is section-based, as defined below in data node
 			 Adds 'left' for devices; set to zero for print
 			 -->
-		<backTint exists="true" everyOther="true"
+		<backTint exists="false" everyOther="true"
 			fillC="9" fillM="0" fillY="0" fillK="6" left="66"
 			width="199.5" height="7.6" firstHeight="8.275" offset="2.3"
 		/>
@@ -54,14 +54,15 @@
 
 	  <!-- HEADER 1 Main title -->
 	  <header name="header1">
-		<fontName>EconSansMed</fontName>
-		<fontSize>8.5</fontSize>
-		<leading>10</leading>
+		<fontName>EconomistSans_Medium</fontName>
+		<fontSize>9</fontSize>
+		<leading>6.5</leading>
 		<hScale>100</hScale>
 		<baseline>0</baseline>
 		<footnotes fontSize="4" superscript="2"/>
 		<initialTab>false</initialTab>
 		<fill>black</fill>
+    <exists>true</exists>
 		<subRanges>
 			<!-- subRange attributes can override previous
 				tab- 	position: a number
@@ -73,58 +74,61 @@
 	  <!-- HEADER 2 -->
 	  <!-- NOTE: new ignoreAfter property... -->
 	  <header name="header2">
-		  <fontName>EconSansCndReg</fontName>
+		  <fontName>EconomistSans_Light</fontName>
 		  <fontSize>6</fontSize>
-		  <leading>11</leading>
+		  <leading>7.5</leading>
 		  <hScale>100</hScale>
 		  <baseline>0</baseline>
+      <exists>true</exists>
 			<footnotes fontSize="4" superscript="2"/>
 		  <initialTab>true</initialTab>
 		  <ignoreAfter>1</ignoreAfter>
 		  <subRanges>
-				<subRange position="262" alignment="Right" value="% change on" fill="grey" fontName="EconSansCndLig" />
+				<subRange position="262" alignment="Right" value="% change on" fill="grey" fontName="EconomistSans_Light" />
 		  </subRanges>
 	  </header>
 
 	  <!-- HEADER 3 -->
 	  <header name="header3">
-		  <fontName>EconSansCndReg</fontName>
+		  <fontName>EconomistSans_Light</fontName>
 		  <fontSize>6</fontSize>
-		  <leading>10</leading>
+		  <leading>7.5</leading>
 		  <hScale>100</hScale>
 		  <baseline>0</baseline>
 			<footnotes fontSize="4" superscript="2"/>
 		  <initialTab>true</initialTab>
+      <exists>true</exists>
 		  <subRanges>
-				<subRange position="206" alignment="Right" value="Index" fill="grey" fontName="EconSansCndLig" />
-				<subRange position="232" alignment="Right" value="one" fill="grey" fontName="EconSansCndLig" />
-				<subRange position="262" alignment="Right" value="@endlastyear" fill="grey" fontName="EconSansCndLig" />
+				<subRange position="206" alignment="Right" value="Index" fill="grey" fontName="EconomistSans_Light" />
+				<subRange position="232" alignment="Right" value="one" fill="grey" fontName="EconomistSans_Light" />
+				<subRange position="262" alignment="Right" value="@endlastyear" fill="grey" fontName="EconomistSans_Light" />
 		  </subRanges>
 	  </header>
 
 
 	  <!-- HEADER 4 -->
 	  <header name="header4">
-		  <fontName>EconSansCndReg</fontName>
+		  <fontName>EconomistSans_Light</fontName>
 		  <fontSize>6</fontSize>
-		  <leading>6</leading>
+		  <leading>7.5</leading>
 			<footnotes fontSize="4" superscript="2"/>
 		  <hScale>100</hScale>
 		  <baseline>0</baseline>
 		  <!-- Rule below style options are: "Solid", "Dot", "Dash", "None" -->
 		  <rules>
-			<headerRule width="0.3" style="Solid" offset="3"
-			  	strokeC="0" strokeM="0" strokeY="0" strokeK="100"
-				dotLength="0" dotGap="0"
-				start="66" end="265.5"
-				/>
+        <headerRule width="0.25" style="Solid" offset="3.6"
+          strokeC="0" strokeM="0" strokeY="0" strokeK="100"
+          dotLength="0" dotGap="0"
+          start="66" end="265.5"
+          />
 		  </rules>
 		  <initialTab>true</initialTab>
+      <exists>true</exists>
 		  <subRanges>
-				<subRange position="66" alignment="Left" value="In local currency" fill="grey" fontName="EconSansCndLig" />
-				<subRange position="206" alignment="Right" value="Mmm dd" fill="grey" fontName="EconSansCndLig" />
-				<subRange position="232" alignment="Right" value="week" fill="grey" fontName="EconSansCndLig" />
-				<subRange position="262" alignment="Right" value="yyyy" fill="grey" fontName="EconSansCndLig" />
+				<subRange position="66" alignment="Left" value="In local currency" fill="grey" fontName="EconomistSans_Light" />
+				<subRange position="206" alignment="Right" value="Mmm dd" fill="grey" fontName="EconomistSans_Light" />
+				<subRange position="232" alignment="Right" value="week" fill="grey" fontName="EconomistSans_Light" />
+				<subRange position="262" alignment="Right" value="yyyy" fill="grey" fontName="EconomistSans_Light" />
 		  </subRanges>
 	  </header>
   </headers>
@@ -135,17 +139,18 @@
 
 	  <!-- HEADER 21 -->
 	  <header name="header21">
-		  <fontName>EconSansCndMed</fontName>
-		  <fontSize>6.5</fontSize>
+		  <fontName>EconomistSans_Medium</fontName>
+		  <fontSize>6</fontSize>
 		  <leading>25</leading>
 			<footnotes fontSize="4" superscript="2"/>
 		  <hScale>100</hScale>
 		  <baseline>0</baseline>
 		  <initialTab>false</initialTab>
+      <exists>true</exists>
 		  <indent>66</indent>
 		  <!-- Rule below style options are: "Solid", "Dot", "Dash", "None" -->
 		  <rules>
-				<headerRule width="0.3" style="Solid" offset="-6"
+				<headerRule width="0.25" style="Solid" offset="-6"
 					strokeC="0" strokeM="0" strokeY="0" strokeK="100"
 					dotLength="0" dotGap="0"
 					start="66" end="265.5"
@@ -153,13 +158,13 @@
 		  </rules>
 			<subRanges>
 				<subRange position="0" alignment="Left" value="US corporate bonds," />
-				<subRange position="50" alignment="Left" value="spread over Treasuries" appendToPrevious="true" fontName="EconSansCndLig" />
+				<subRange position="50" alignment="Left" value="spread over Treasuries" appendToPrevious="true" fontName="EconomistSans_Light" />
 			</subRanges>
 	  </header>
 
   <!-- HEADER 22 -->
 	  <header name="header22">
-		  <fontName>EconSansCndLig</fontName>
+		  <fontName>EconomistSans_Light</fontName>
 		  <fontSize>6</fontSize>
 		  <leading>9.95</leading>
 			<footnotes fontSize="4" superscript="2"/>
@@ -167,6 +172,7 @@
 		  <baseline>0</baseline>
 		  <!-- Rule below style options are: "Solid", "Dot", "Dash", "None" -->
 		  <initialTab>true</initialTab>
+      <exists>true</exists>
 			<subRanges>
 				<subRange position="262" alignment="Right" value="@endlastyear" fill="grey" />
 			</subRanges>
@@ -174,7 +180,7 @@
 
   <!-- HEADER 23 -->
 	  <header name="header23">
-		  <fontName>EconSansCndLig</fontName>
+		  <fontName>EconomistSans_Light</fontName>
 		  <fontSize>6</fontSize>
 		  <leading>7</leading>
 			<footnotes fontSize="4" superscript="2"/>
@@ -191,10 +197,11 @@
 		  </rules>
 		  <indent>66</indent>
 		  <initialTab>false</initialTab>
+      <exists>true</exists>
 		  <subRanges>
 				<subRange position="0" alignment="Left" value="Basis points" fill="grey"/>
-				<subRange position="232" alignment="Right" value="latest" fontName="EconSansCndLig" fill="grey"/>
-				<subRange position="262" alignment="Right" value="@lastyear" fontName="EconSansCndLig" fill="grey"/>
+				<subRange position="232" alignment="Right" value="latest" fontName="EconomistSans_Light" fill="grey"/>
+				<subRange position="262" alignment="Right" value="@lastyear" fontName="EconomistSans_Light" fill="grey"/>
 		  </subRanges>
 	  </header>
 	</bondHeaders>
@@ -202,15 +209,15 @@
   <!-- DATA -->
   <data>
 		<!-- LEADING, TABS, H-SCALING, FONT NAME & SIZE, BASELINE, RULE-BELOW -->
-		<fontName>EconSansCndLig</fontName>
+		<fontName>EconomistSans_Light</fontName>
 		<fontSize>6.5</fontSize>
-		<firstLeading>9</firstLeading>
-		<leading>8.4</leading>
+		<firstLeading>8.5</firstLeading>
+		<leading>8.5</leading>
 		<indent>66</indent>
 		<footnotes fontSize="4" superscript="2"/>
 		<hScale>100</hScale>
 		<baseline>0</baseline>
-		<rectOffset>1</rectOffset>
+		<rectOffset>0</rectOffset>
 		<explicit>false</explicit>
 		<fill>black</fill>
 
@@ -221,7 +228,7 @@
 			 If explicit="true", rules are drawn according to the explicitRules node
 			 Otherwise, properties define ruler style for default lines, section ends and last line
 			 -->
-	<rules defaultRule="noRule" sectionRule="solidRule" finalRule="solidRule" >
+	<rules defaultRule="minorRule" sectionRule="solidRule" finalRule="solidRule" >
 		<!-- noRule must have an offset value -->
 		  <noRule width="0" style="None" offset="2.7" />
 		  <dotRule width="0.5" style="Dot" offset="2.7"
@@ -229,6 +236,12 @@
 			  dotLength="0.01" dotGap="2.05"
 			  start="66" end="265.5"
 			/>
+      <!-- Added Feb'24: minor rule between rows -->
+      <minorRule width="0.25" style="Solid" offset="3.575"
+        strokeC="0" strokeM="0" strokeY="0" strokeK="25"
+        dotLength="0" dotGap="0"
+        start="66" end="265.5"
+      />
 		  <dashRule width="0.3" style="Dash" offset="2.7"
 			  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
 			  dotLength="6" dotGap="1.75"
@@ -250,8 +263,8 @@
 
 
 	<subRanges>
-		<subRange position="0" alignment="Left" isNumber="false" fontName="EconSansCndMed" />
-		<subRange position="1" alignment="Left" isNumber="false" overruleDPs="false" appendToPrevious="true" note="This is a dummy tabstop, since next string is appended to previous" fontName="EconSansCndLig"/>
+		<subRange position="0" alignment="Left" isNumber="false" fontName="EconomistSans_Medium" />
+		<subRange position="1" alignment="Left" isNumber="false" overruleDPs="false" appendToPrevious="true" note="This is a dummy tabstop, since next string is appended to previous" fontName="EconomistSans_Light"/>
 		<subRange position="206" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" />
 		<subRange position="232" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" rLeft="215.5" rWidth="20" />
 		<subRange position="262" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" rLeft="245.5" rWidth="20" />
@@ -271,11 +284,11 @@
   <!-- SOURCES AND FOOTNOTES
 		General "leading" is applied to para as a whole, then firstLeading to first line only -->
   <foot>
-		<firstLeading>11</firstLeading>
-		<leading>7</leading>
-		<hScale>100</hScale>
-		<fontName>EconSansCndLig</fontName>
+		<fontName>EconomistSans_Light</fontName>
 		<fontSize>6</fontSize>
+		<firstLeading>8.5</firstLeading>
+		<leading>8.5</leading>
+		<hScale>100</hScale>
 		<footnotes fontSize="6" superscript="0"/>
 		<baseline>0</baseline>
 		<fill>grey</fill>

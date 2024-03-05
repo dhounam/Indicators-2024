@@ -46,14 +46,14 @@
 
 	  <!-- Commodities: print only -->
 	  <table id="tabCOMMODITIESPRINT" source="tabCOMMODITIES" displayName="Commodities (print)" process="false" prn="true" web="false" dev="false" seconds="3" split="true" code="400" >
-		<col count="5" lookup="tabCOMMODITIESPRINT_A" />
-		<col count="6" lookup="tabCOMMODITIESPRINT_B" />
+      <col count="5" lookup="tabCOMMODITIESPRINT_A" />
+      <col count="6" lookup="tabCOMMODITIESPRINT_B" />
 	  </table>
 
 	  <!-- Commodities: digital only -->
 	  <table id="tabCOMMODITIESDEVICES" source="tabCOMMODITIES" displayName="Commodities (digital)" process="false" prn="false" web="true" dev="true" seconds="3" split="true" code="401" >
-		<col count="5" lookup="tabCOMMODITIESDEVICES_A" />
-		<col count="6" lookup="tabCOMMODITIESDEVICES_B" />
+      <col count="5" lookup="tabCOMMODITIESDEVICES_A" />
+      <col count="6" lookup="tabCOMMODITIESDEVICES_B" />
 	  </table>
 
   </tables>

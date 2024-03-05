@@ -53,22 +53,22 @@
 
 	  <!-- HEADER 1 -->
 	  <header name="header1">
-		<fontName>EconomistSans_Medium</fontName>
-		<fontSize>9</fontSize>
-		<leading>8.5</leading>
-		<hScale>100</hScale>
-		<baseline>0</baseline>
-		<footnotes fontSize="4" superscript="2"/>
-		<initialTab>false</initialTab>
-		<indent>0</indent>
-		<fill>black</fill>
-    <exists>true</exists>
-		<subRanges>
-			<!-- subRange attributes can override previous
-				tab- 	position: a number
-						alignment: Left, Center, Right, or Decimal -->
-			<subRange position="0" alignment="Left" />
-		</subRanges>
+      <fontName>EconomistSans_Medium</fontName>
+      <fontSize>9</fontSize>
+      <leading>7.5</leading>
+      <hScale>100</hScale>
+      <baseline>0</baseline>
+      <footnotes fontSize="4" superscript="2"/>
+      <initialTab>false</initialTab>
+      <indent>0</indent>
+      <fill>black</fill>
+      <exists>true</exists>
+      <subRanges>
+        <!-- subRange attributes can override previous
+          tab- 	position: a number
+              alignment: Left, Center, Right, or Decimal -->
+        <subRange position="0" alignment="Left" />
+      </subRanges>
 	  </header>
 
 	  <header name="header2">
@@ -177,7 +177,7 @@
 			  start="0" end="160"
 			  />
 		  <!-- Define rule at bottom of data block -->
-		  <solidRule width="0.25" style="Solid" offset="3.1"
+		  <solidRule width="0.25" style="Solid" offset="3.3"
 			  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
 			  dotLength="0" dotGap="0"
 			  start="0" end="160"

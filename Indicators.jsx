@@ -845,10 +845,13 @@ function processTable(tableObj)
 	// Open corresponding lookup file
 	// Commodities has a split property that tells us to refer to
 	// an array of "col" objects that tell us which lookup file to use...
-	// Check split:
+	// Check for split:
 	if (tableObj.@split.toLowerCase() == "true") {
-		// Get number of data colums from first line in data file
-		var colNo = g_dataXMLObj.data.dataitems[0].dataitem.length();
+		// Get number of data columns in data file
+    // Checking first 2 lines (in case 1st is only 1 element)
+    var lenA = g_dataXMLObj.data.dataitems[0].dataitem.length()
+    var lenB = g_dataXMLObj.data.dataitems[1].dataitem.length()
+		var colNo = Math.max(lenA, lenB)
 		for each (var cItem in tableObj.col) {
 			if (parseInt(cItem.@count) == colNo) {
 				var tID = cItem.@lookup.toString();
