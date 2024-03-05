@@ -1,0 +1,31 @@
+﻿//	Indicators: "stub" JS file for local processing using 'live' datestamp for file names
+
+// Include LOCAL copy of Indicators_2023.jsx:
+// NOTE: path may change according to local dev context
+#include "~/Desktop/Indicators-2023/Indicators_2023.jsx"
+
+// $.level=1;
+
+// isLocal is true to read in local config file, and use 'local' paths
+// False to read in network config file, and use Mac/Windows paths
+
+// isMac is Mac/Windows flag
+
+// isTest=true for testing, which will override file dates to use 
+// 1 Jan 2099 (20990101), locally or over network
+
+//	*****************************
+//	*** EDIT THESE LINES ONLY ***
+const isLocal = true;
+const isMac = true;
+const isTest = false;
+//	*****************************
+
+try {
+	// Call top-level function
+	Indicators(isLocal, isMac, isTest);
+}
+catch (error) {
+	alert(error)
+	alert("Unable to process anything. Start by checking that all volumes are mounted. If that doesn't work, scream for Donald (07825 994445)...")
+}

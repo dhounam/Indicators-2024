@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Update Feb 2024
+      Line row separators
+      New fonts
+      All file names drop the 'yyyy' suffix (so plain 'Indicators.*' instead of 'Indicators-yyyy.*')
+    Previous update July 2022
+      Rationalised paths
+      Only one file output for web/devices
+    Previous update 24 July 2019
+			Adds paths to test drop folder on server
+		Previous update:
+			Reduces tables to: EcoData (1 pr, 2 dev), Markets (pr, dev) and Commodities (pr, dev)
+			Outputs to Workflow
+			-->
+<config>
+
+  <!-- TABLES -->
+  <tables>
+		<!-- Each table has-
+			id: skeleton for input (XML) file names
+			displayName: string displayed in dialog
+			process: flag is ALWAYS false in this configuration file
+					Code sets it to true if user selects table in dialog - governs whether it's processed
+			prn/web/dev: flags for platforms
+			seconds: est'd time to process, shown in dialog
+			split: true for Commodities, which looks up number of columns to decide which lookup file to use...
+			code: part of filename for exported EPS file
+
+      Mods Feb'22: reset visible table names in dialog to 'digital', rather than 'devices'
+			-->
+
+ <!-- ECODATA: print version -->
+	  <table id="tabECODATA" source="tabECODATA" displayName="EcoData (print)" process="false" prn="true" web="false" dev="false" seconds="12" split="false" code="100" />
+
+	  <!-- ECODATA 1: left half, for digital only -->
+	  <table id="tabECODATA1" source="tabECODATA1" displayName="EcoData 1 (digital) " process="false" prn="false" web="true" dev="true" seconds="10" split="false" code="101" />
+
+	  <!-- ECODATA 2: right half, for digital only -->
+	  <table id="tabECODATA2" source="tabECODATA2" displayName="EcoData 2 (digital)" process="false" prn="false" web="true" dev="true" seconds="10" split="false" code="102" />
+
+	  <!-- New 2-col markets: print only -->
+	  <table id="tabMARKETSPRINT" source="tabMARKETS" displayName="Markets (print)" process="false" prn="true" web="false" dev="false" seconds="5" split="false" code="200" />
+
+	  <!-- All markets: digital only -->
+		<table id="tabMARKETSDEVICES" source="tabMARKETS" displayName="Markets (digital)" process="false" prn="false" web="true" dev="true" seconds="7" split="false" code="201" />
+
+	  <!-- Commodities: print only -->
+	  <table id="tabCOMMODITIESPRINT" source="tabCOMMODITIES" displayName="Commodities (print)" process="false" prn="true" web="false" dev="false" seconds="3" split="true" code="400" >
+		<col count="5" lookup="tabCOMMODITIESPRINT_A" />
+		<col count="6" lookup="tabCOMMODITIESPRINT_B" />
+	  </table>
+
+	  <!-- Commodities: digital only -->
+	  <table id="tabCOMMODITIESDEVICES" source="tabCOMMODITIES" displayName="Commodities (digital)" process="false" prn="false" web="true" dev="true" seconds="3" split="true" code="401" >
+		<col count="5" lookup="tabCOMMODITIESDEVICES_A" />
+		<col count="6" lookup="tabCOMMODITIESDEVICES_B" />
+	  </table>
+
+  </tables>
+  <!-- TABLES ENDS -->
+
+
+ 	<!-- PATHS
+		-  	localPaths are Donald Hounam's local test paths.
+		-	serverMac/WinPaths as previous, but with Windows-complient path strings
+		-  	testMac/WinPaths process Tanveer's test XML without troubling the workflow
+  		NOTE: all paths must end with "/"
+    Feb'22:
+        - refs to 'webFolder' deleted
+        - devFolder (devices) replaced with digFolder (for web and devices)
+	-->
+
+  <!-- LOCAL PATHS are Mac only -->
+  <localPaths>
+		<sourcePath>~/Development/Indicators/source/</sourcePath>
+		<lookupPath>~/Development/Indicators/lookup/</lookupPath>
+		<prnFolder>~/Development/Indicators/output/print/</prnFolder>
+		<digFolder>~/Development/Indicators/output/digital/</digFolder>
+  </localPaths>
+
+  <!-- LIVE PATHS, Mac and Windows -->
+  <serverMacPaths>
+	  <sourcePath>/Volumes/Research/Indicators_xml/</sourcePath>
+  	<lookupPath>/Volumes/Data/Indicators-2023/lookup/</lookupPath>
+    <prnFolder>/Volumes/Graphics/Images/2_CUE_Only/</prnFolder>
+    <digFolder>/Volumes/Graphics/Images/1_All_Destinations_In/</digFolder>
+  </serverMacPaths>
+
+  <serverWinPaths>
+		<sourcePath>/R/Indicators_xml/</sourcePath>
+		<lookupPath>/T/Indicators-2023/lookup/</lookupPath>
+		<prnFolder>/G/Images/2_CUE_Only/</prnFolder>
+		<digFolder>/G/Images/1_All_Destinations_In/</digFolder>
+  </serverWinPaths>
+
+  <!-- TEST PATHS: Mac and Windows
+	Until Feb 2022, there was a test source folder on the server
+    We now use a future date - Jan 1 2099 - for test files,
+    which can thus be run through the same workflow
+  -->
+
+  <!-- PATHS END -->
+
+	<!-- NOTE ON FONT NAMES
+		 Illustrator refers to fonts as "EconomistSans-Regular", etc.
+		 I need to name corresponding objects in the code, but can't use hyphens as object names
+		 So in lookup files I substitute an underline ("_") for the hyphen ("-")
+		 Replacement of "_" with "-" is done in code...
+		 Method survives change of fonts
+
+     SO FAR, I HAVEN'T CHANGED FONT NAMES FROM PRE-2024 STYLE
+		 -->
+	<fonts>
+  		<font name="EconomistSans_Bold" f="EconomistSans-Bold" />
+  		<font name="EconomistSans_Medium" f="EconomistSans-Medium" />
+  		<font name="EconomistSans_Light" f="EconomistSans-Light" />
+  		<font name="EconomistSans_BoldItalic" f="EconomistSans-BoldItalic" />
+  		<font name="EconomistSans_MediumItalic" f="EconomistSans-MediumItalic" />
+  		<font name="EconomistSans_LightItalic" f="EconomistSans-LightItalic" />
+	</fonts>
+
+
+	<!-- DEFAULT ATTRIBUTES
+		 These are applied to g_Attributes at start-up
+		 Really just to get the object initialised...
+		 There's no good reason to change these
+		 -->
+	<defaultAttributes>
+		<leading>8</leading>
+		<subRanges>
+			<subRange position="0" alignment="Left" />
+		</subRanges>
+		<hScale>100</hScale>
+		<fontName>EconomistSans-Medium</fontName>
+		<fontSize>7</fontSize>
+		<baseline>0</baseline>
+	</defaultAttributes>
+
+</config>

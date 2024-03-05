@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ECODATA: this is the big table, print edition only
+		** WITH MORE DETAILED DOCUMENTATION **
+
+	Divided into four main nodes:
+		layout		(overall layout)
+		headers		(header definitions)
+    dividers  (vertical lines between headers)
+		data		(main data block of table)
+		foot		(footnotes and sources)
+	-->
+
+<indicators>
+
+	<id>tabECODATA</id>
+
+	<!-- NOTE ON FONT NAMES
+		 Illustrator refers to Officina fonts as "OfficinaSanITC-Book", etc.
+		 I need to name corresponding objects in the code, but cannot use hyphens as object names
+		 So in lookup files I substitute an underline ("_") for the hyphen ("-")
+		 Replacement of "_" with "-" is done in code...
+		 -->
+
+	<!-- LAYOUT
+		 Defines background box; "flash"; margins; 2nd text box (Reserves only); background tints -->
+	<layout>
+
+		<!-- BACKGROUND BOX
+			 co-ordinates
+			 fill
+			 stroke
+			 'y' and 'height' must be same value to set box to top left of artboard
+			 -->
+		<backBox x="0" y="410"
+			width="504" height="410" heightwas="435"
+			fillC="0" fillM="0" fillY="0" fillK="0"
+			strokeC="0" strokeM="0" strokeY="0" strokeK="0"/>
+
+		<!-- FLASH
+			 If there is a red flash at top left of the chart, it is defined here:
+			 	set exists="true" if there is a red flash
+				position is hard-coded to top left, so only define width and height
+				fill
+				stroke
+			 -->
+		<flash exists="false"
+			width="5" height="15"
+			fillC="0" fillM="100" fillY="100" fillK="0"
+			strokeC="0" strokeM="0" strokeY="0" strokeK="0" />
+
+		<!-- MARGINS FOR TEXT BOX -->
+		<margins top="0" left="0" right="0" bottom="0" />
+
+		<!-- 2ND TEXT BOX (RESERVES)
+			 If there is a second text box (Reserves only), set flag to "true"
+			 -->
+		<textBox2 exists="false" />
+
+		<!-- Background tints (stripes)
+			 Can exist or not.
+			 If everyOther=true, lines are alternately tinted; if false, sections (defined in data.sectionBreaks, below)
+			 	are tinted alternately
+			 Fill CMYK values
+       The height and firstHeight properties were used to set the height of +/– 
+       rectangles, even if rows are separated by lines, not tints. But actually
+       I can use the leading; so redundant
+			 -->
+		<backTint exists="false" everyOther="true"
+			fillC="9" fillM="0" fillY="0" fillK="6"
+			width="504" height="6.5" firstHeight="6.5" offset= "2.6"
+      offsetwas = "2.3"/>
+
+	</layout>
+	<!-- LAYOUT ends -->
+
+
+  <!-- HEADERS
+  	   This section defines as many headers as exist; they are named sequentially "header1", "header2", etc.
+	   For each header define:
+	   		Font name and size
+			Leading (for first-drawn header, will set distance of baseline below top of artboard)
+			Horizontal scaling (as percent)
+			Baseline shift
+			Font size and superscript for footnote symbols
+			initialTab: if this is true, the code inserts a tab character at the beginning of each line, "forcing" header strings to the first tab stop
+				Broadly, for the title and subtitle of the table this value is false
+				For subsequent headers, it is true
+	  		rules node contains a headerRule subnode for every rule beneath a line of headers
+	  			Properties are:
+	  				width, in points
+					style: "Solid", "Dot", "Dash", "None"
+					offset: vertical coordinate, relative to baseline
+					stroke color values
+					dot length and gap (if relevant)
+					start and end x-coords
+      if ignore=true, header is not processed
+			subRanges
+				The "subRanges" node contains "subRange" sub-nodes for every string in one header line.
+				In each case:
+					position is tab stop measure, in points
+					alignment is "left", "center" or "right"
+					value is redundant, since header strings are passed in from the XML source file; but I've left them for reference purposes
+	   -->
+  <headers>
+
+	  <!-- HEADER 1 -->
+	  <header name="header1">
+      <fontName>EconomistSans_Medium</fontName>
+      <fontSize>9</fontSize>
+      <leading>5</leading>
+      <hScale>100</hScale>
+      <baseline>0</baseline>
+      <footnotes fontSize="4" superscript="2"/>
+      <initialTab>false</initialTab>
+      <fill>black</fill>
+      <exists>false</exists>
+      <subRanges>
+        <!-- subRange attributes can override previous
+          tab- 	position: a number
+              alignment: Left, Center, Right, or Decimal -->
+        <subRange position="0" alignment="Left" value="" />
+      </subRanges>
+	  </header>
+
+	  <header name="header2">
+		  <fontName>EconomistSans_Medium</fontName>
+		  <fontSize>6</fontSize>
+  		<footnotes fontSize="4" superscript="2"/>
+		  <leading>5</leading>
+		  <hScale>100</hScale>
+		  <baseline>0</baseline>
+		  <initialTab>true</initialTab>
+      <exists>true</exists>
+		  <subRanges>
+				<subRange position="42" alignment="Left" value="" />
+				<subRange position="133" alignment="Left" value="" />
+				<subRange position="192" alignment="Left" value="" />
+				<subRange position="251" alignment="Left" value="" />
+				<subRange position="310" alignment="Left" value="" />
+				<subRange position="370" alignment="Left" value="" />
+				<subRange position="450" alignment="Left" value="" />
+		  </subRanges>
+	  </header>
+
+	  <header name="header3">
+		  <fontName>EconomistSans_Light</fontName>
+		  <fontSize>6</fontSize>
+		  <leading>7.5</leading>
+		  <footnotes fontSize="4" superscript="2"/>
+		  <hScale>100</hScale>
+		  <baseline>0</baseline>
+  		<initialTab>true</initialTab>
+      <exists>true</exists>
+		  <subRanges>
+				<subRange position="42" alignment="Left" fill="grey" value="%, change on year ago" />
+				<subRange position="133" alignment="Left" fill="grey" value="%, change on year ago" />
+				<subRange position="192" alignment="Left" value="rate" fontName="EconomistSans_Medium" />
+				<subRange position="251" alignment="Left" value="balance" fontName="EconomistSans_Medium" />
+				<subRange position="310" alignment="Left" value="balance" fontName="EconomistSans_Medium"/>
+				<subRange position="370" alignment="Left" fill="grey" value="10-yr govt bonds" hScale="97" />
+				<subRange position="440" alignment="Right" fill="grey" value="change on" hScale="97" />
+				<subRange position="450" alignment="Left" fill="grey" value="per $" />
+				<subRange position="503.8" alignment="Right" fill="grey" value="% change" />
+		  </subRanges>
+	  </header>
+
+	  <header name="header4">
+		  <fontName>EconomistSans_Light</fontName>
+		  <fontSize>6</fontSize>
+		  <leading>7.5</leading>
+		  <fill>grey</fill>
+	  	<footnotes fontSize="4" superscript="2"/>
+		  <hScale>100</hScale>
+		  <baseline>0</baseline>
+      <exists>true</exists>
+		  <!-- Rule below style options are: "Solid", "Dot", "Dash", "None" -->
+		  <rules>
+			<headerRule width="0.25" style="Solid" offset="3.62"
+				strokeC="0" strokeM="0" strokeY="0" strokeK="100"
+				dotLength="0" dotGap="0"
+				start="0" end="504"
+				/>
+		  </rules>
+  		<initialTab>true</initialTab>
+		  <subRanges>
+				<subRange position="42" alignment="Left" value="" />
+				<subRange position="96" alignment="Right" value="" />
+				<subRange position="118" alignment="Right" value="" />
+				<subRange position="133" alignment="Left" value="" />
+				<subRange position="184" alignment="Right" value="" />
+				<subRange position="192" alignment="Left" value="" />
+				<subRange position="251" alignment="Left" value="" />
+				<subRange position="310" alignment="Left" value="" />
+				<subRange position="370" alignment="Left" value="" />
+				<subRange position="440" alignment="Right" value="" />
+				<subRange position="450" alignment="Left" value="" />
+				<subRange position="503.5" alignment="Right" value="" />
+		  </subRanges>
+	  </header>
+
+  </headers>
+
+  <!-- Vertical dividers in headers range -->
+  <dividers>
+  	<colours>
+  		<c>0</c>
+  		<m>0</m>
+  		<y>0</y>
+  		<k>100</k>
+  	</colours>
+  	<width>0.25</width>
+  	<lineEnd>0</lineEnd>
+  	<y1>387.52</y1>
+  	<y2>409.4</y2>
+  	<lefts>
+	  	<left>39</left>
+	  	<left>130</left>
+	  	<left>189</left>
+	  	<left>248</left>
+	  	<left>307</left>
+	  	<left>367</left>
+	  	<left>447</left>
+	  </lefts>
+  </dividers>
+
+  <!-- DATA
+  	   Data node defines styles and formats for the main data block of the table
+	   -->
+  <data>
+		<!-- Font name and size
+			 firstLeading		leading for first line of data block
+			 leading			leading for all subsequent llines
+			 footnotes			symbol fontsize and superscript
+			 horizontal scaling
+			 baseline shift
+			 explicit
+			 	if true, the explicitStyles node defines formatting LINE BY LINE (Commodities only)
+				if false, formatting applies to all lines in data block
+			-->
+		<fontName>EconomistSans_Light</fontName>
+		<fontSize>6</fontSize>
+		<firstLeading>8.5</firstLeading>
+		<leading>8.5</leading>
+		<indent>0</indent>
+		<old-indent>3</old-indent>
+		<footnotes fontSize="5" superscript="2"/>
+		<hScale>100</hScale>
+		<baseline>0</baseline>
+		<rectOffset>1</rectOffset>
+		<explicit>false</explicit>
+		<fill>black</fill>
+
+		<!-- RULES
+			 I define four rule styles:
+			 	noRule		as it suggests, no underline
+				dotRule		dotted underline
+				dashRule	dashed underline
+        minorRule new paler rule below rows
+				solidRule	solid underline
+			 The properties in the first line, below, determines which of these four styles is applied to each "type"
+			 of data line:
+			 	defaultRule is a "normal" line of data
+				sectionRule is a line that ends a subsection of data
+				finalRule is the bottom line of the data block
+			 First this defines style for default (normal) lines of data
+			 -->
+		<rules defaultRule="minorRule" sectionRule="solidRule" finalRule="solidRule" >
+			<!-- noRule must have an offset value -->
+			  <noRule width="0" style="None" offset="2.7" />
+			  <dotRule width="0.5" style="Dot" offset="2.7"
+				  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
+				  dotLength="0.01" dotGap="2.05"
+				  start="0" end="504"
+				/>
+        <!-- Added Feb'24: minor rule between rows -->
+			  <minorRule width="0.25" style="Solid" offset="3.575" former-offset="2.7 then 3.1"
+				  strokeC="0" strokeM="0" strokeY="0" strokeK="25"
+				  dotLength="0" dotGap="0"
+				  start="0" end="504"
+				  />
+			  <!--  -->
+			  <dashRule width="0.3" style="Dash" offset="2.7"
+				  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
+				  dotLength="6" dotGap="1.75"
+				  start="0" end="504"
+				/>
+			  <!-- Section separators and bottom rule -->
+			  <solidRule width="0.25" style="Solid" offset="3.575" former-offset="2.7"
+				  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
+				  dotLength="0" dotGap="0"
+				  start="0" end="504"
+				  />
+		</rules>
+
+		<!--	explicitStyles governs a series of special cases that, so far, apply only to
+				Commodities; for all other tables, explicit="false" and these rules are
+				never even examined.
+				See comments in tabCOMMODITIES_A_lookup.xml
+				-->
+		<explicitStyles>
+		</explicitStyles>
+
+		<!-- SUBRANGES
+			 Basically, these are column properties:
+			 	tab position
+				tab alignment
+				font name and size (if these are omitted, the line's defaults, above, are used)
+				isNumber flag: true for a value, false for a string
+				showPlus: flags whether positive values are preceded by "+"
+				dPlaces: number of dec places
+				overRuleDPs:
+					if true, the dPlaces value can be overridden by a convention which states:
+						values >= 100 set to 1 dec place
+						values >= 1,000 rounded to integer
+				hardValue (e.g. hardValue="/"; omit to ignore)
+					this allows the insertion of a column that shows the value
+					it is used in the Poll (see tabPOLL_lookup.xml) to insert the slashes between columns
+					there should be no data for this column in the source XML file
+				hasParenth: if "true", round brackets are place round the value (simply omit this property to set it to false)
+			 -->
+		<subRanges>
+			<subRange position="0" alignment="Left" isNumber="false" fontName="EconomistSans_Light" />
+			<subRange position="55" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="true" rLeft="39" rWidth="20" />
+			<subRange position="61" alignment="Left" fontSize="5" isNumber="false" fill="grey" />
+			<subRange position="96" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="true" />
+			<subRange position="118" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="true" />
+			<subRange position="146" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="true" rLeft="130" rWidth="20" />
+			<subRange position="152" alignment="Left" isNumber="false" fontSize="5" fill="grey" />
+			<subRange position="184" alignment="Right" isNumber="false" showPlus="false" dPlaces="1" overruleDPs="false" />
+			<subRange position="205" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="true" />
+			<subRange position="211" alignment="Left" isNumber="false" fontSize="5" fill="grey" />
+			<subRange position="264" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" rLeft="248" rWidth="20" />
+			<subRange position="323" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" rLeft="307" rWidth="20" />
+			<subRange position="382" alignment="Right" isNumber="true" dPlaces="1" showPlus="false" overruleDPs="true" rLeft="367" rWidth="20" />
+			<subRange position="440" alignment="Right" isNumber="true" dPlaces="1" showPlus="false" overruleDPs="true" />
+			<subRange position="470" alignment="Right" isNumber="true" dPlaces="2" showPlus="false" overruleDPs="true" />
+			<subRange position="500" alignment="Right" isNumber="true" dPlaces="1" showPlus="false" overruleDPs="true" rLeft="484" rWidth="20" />
+		</subRanges>
+
+		<!-- SECTION BREAKS
+			 Line numbers for section breaks
+			 Last line must be declared -->
+		<sectionBreaks>
+		  <sectionBreak>5</sectionBreak>
+		  <sectionBreak>15</sectionBreak>
+		  <sectionBreak>22</sectionBreak>
+		  <sectionBreak>34</sectionBreak>
+		  <sectionBreak>39</sectionBreak>
+		  <sectionBreak>48</sectionBreak>
+		  <sectionBreak>53</sectionBreak>
+		  <sectionBreak>58</sectionBreak>
+		</sectionBreaks>
+  </data>
+  <!-- DATA ENDS -->
+
+  <!-- SOURCES AND FOOTNOTES
+		General "leading" is applied to para as a whole, then firstLeading to first line only
+		"footnotes" adjusts font size and baseline on symbols (set back to default, Oct 2018) -->
+  <foot>
+		<fontName>EconomistSans_Light</fontName>
+		<fontSize>6</fontSize>
+		<firstLeading>8.5</firstLeading>
+		<leading>8.5</leading>
+		<footnotes fontSize="6" superscript="0"/>
+		<hScale>100</hScale>
+		<baseline>0</baseline>
+		<fill>grey</fill>
+		<indent>0</indent>
+  </foot>
+
+</indicators>

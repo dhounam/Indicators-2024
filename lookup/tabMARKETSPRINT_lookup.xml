@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- MARKETS: print version -->
+
+<indicators>
+
+	<id>tabMARKETSPRINT</id>
+
+	<!-- LAYOUT -->
+	<layout>
+
+		<!-- BACKGROUND BOX -->
+		<backBox x="0" y="230"
+			width="332" height="230"
+			fillC="0" fillM="0" fillY="0" fillK="0"
+			strokeC="0" strokeM="0" strokeY="0" strokeK="0"/>
+
+		<!-- FLASH -->
+		<flash exists="false"
+			width="5" height="15"
+			fillC="0" fillM="100" fillY="100" fillK="0"
+			strokeC="0" strokeM="0" strokeY="0" strokeK="0" />
+
+		<!-- MARGINS FOR TEXT BOX
+			 Currently no bottom margin set
+			 Top margin is to baseline of title string -->
+
+		<margins top="0" left="0" right="0" bottom="0" />
+		<!-- 2ND TEXT BOX (WEB TABLE 7)
+			 Currently just flag here; layout details are hard-coded into the JSX file -->
+
+		<!-- 2ND TEXT BOX
+			 Layout details previously hard-coded into the JSX file to move here as far as possible...
+			 textBox2Top is an amount to move the second text box down from the top of the table to align text
+			 textBox2JumpCount is line number to jump to second textFrame
+			 belowSubtitle is extra space below subtitle
+			 plusMinusRectMove is a value equivalent to width of column 1
+          + gutter, by which the tinted rects are moved
+			 -->
+		<textBox2 exists="true"
+			gutterWidth="10.5"
+			textBox2Top="33.3"
+			textBox2Height="192.5"
+			textBox2JumpCount="24"
+			col1Depth="190"
+			belowSubtitle="10"
+			col2FirstFootnoteLeading="29.4"
+			startWithTint="true"
+			plusMinusRectMove="171.25">.
+			<!-- Footers for 2 columns
+				 Contents can be "source", "footnote" or "all"
+				 -->
+			<col1Footer exists="false"
+				contents="source"
+				firstLeading="11"
+				/>
+			<col2Footer exists="true"
+				contents="source"
+				firstLeading="10.5"
+				/>
+		</textBox2>
+
+		<!-- Background tint
+			 If everyOther=true, lines are alternately tinted
+			 If false, tinting is section-based, as defined below in data node
+			 -->
+		<backTint exists="false" everyOther="true"
+			fillC="9" fillM="0" fillY="0" fillK="6"
+			width="160.75" height="6.5" firstHeight="6.5"
+      offset="2.6" oldoffset="2.3 then 3.5"
+		/>
+
+	</layout>
+	<!-- LAYOUT ends -->
+
+
+  <!-- HEADERS -->
+  <headers>
+
+	  <!-- HEADER 1 Main title -->
+	  <header name="header1">
+		<fontName>EconomistSans_Medium</fontName>
+		<fontSize>9</fontSize>
+		<leading>6.5</leading>
+		<hScale>100</hScale>
+		<baseline>0</baseline>
+		<footnotes fontSize="4" superscript="2"/>
+		<initialTab>false</initialTab>
+		<fill>black</fill>
+    <exists>true</exists>
+		<subRanges>
+			<!-- subRange attributes can override previous
+				tab- 	position: a number
+						alignment: Left, Center, Right, or Decimal -->
+			<subRange position="0" alignment="Left" value="Markets" />
+		</subRanges>
+	  </header>
+
+	  <!-- HEADER 2 -->
+	  <header name="header2">
+		  <fontName>EconomistSans_Light</fontName>
+		  <fontSize>6</fontSize>
+		  <leading>7.5</leading>
+		  <hScale>100</hScale>
+		  <baseline>0</baseline>
+			<footnotes fontSize="4" superscript="2"/>
+		  <initialTab>true</initialTab>
+      <exists>true</exists>
+		  <subRanges>
+				<subRange position="160.75" alignment="Right" value="% change on (left)" fill="grey"/>
+				<subRange position="331.5" alignment="Right" value="% change on (right)" fill="grey"/>
+		  </subRanges>
+	  </header>
+
+	  <!-- HEADER 3 -->
+	  <header name="header3">
+		  <fontName>EconomistSans_Light</fontName>
+		  <fontSize>6</fontSize>
+		  <leading>7.5</leading>
+		  <hScale>100</hScale>
+		  <baseline>0</baseline>
+			<footnotes fontSize="4" superscript="2"/>
+		  <initialTab>true</initialTab>
+      <exists>true</exists>
+		  <subRanges>
+				<subRange position="102.75" alignment="Right" value="Index (left)" fill="grey" />
+				<subRange position="131.75" alignment="Right" value="one (left)" fill="grey" />
+				<subRange position="160.75" alignment="Right" value="@endlastyear (left)" fill="grey" />
+				<subRange position="274.5" alignment="Right" value="Index (right)" fill="grey" />
+				<subRange position="303.5" alignment="Right" value="one (right)" fill="grey" />
+				<subRange position="331.5" alignment="Right" value="@endlastyear (right)" fill="grey" />
+		  </subRanges>
+	  </header>
+
+	  <!-- HEADER 4 -->
+	  <header name="header4">
+		  <fontName>EconomistSans_Light</fontName>
+		  <fontSize>6</fontSize>
+		  <leading>7.5</leading>
+			<footnotes fontSize="4" superscript="2"/>
+		  <hScale>100</hScale>
+		  <baseline>0</baseline>
+		  <!-- Rule below style options are: "Solid", "Dot", "Dash", "None" -->
+		  <rules>
+        <headerRule width="0.3" style="Solid" offset="3.6"
+            strokeC="0" strokeM="0" strokeY="0" strokeK="100"
+          dotLength="0" dotGap="0"
+          start="0" end="160.75"
+          />
+        <headerRule width="0.3" style="Solid" offset="3.6"
+            strokeC="0" strokeM="0" strokeY="0" strokeK="100"
+          dotLength="0" dotGap="0"
+          start="171.25" end="332"
+				/>
+		  </rules>
+		  <initialTab>false</initialTab>
+      <exists>true</exists>
+		  <subRanges>
+			<subRange position="0" alignment="Left" value="In local currency" fill="grey" />
+			<subRange position="102.75" alignment="Right" value="Mmm dd (left)" fill="grey" />
+			<subRange position="131.75" alignment="Right" value="week" fill="grey" />
+			<subRange position="160.75" alignment="Right" value="2017" fill="grey" />
+			<subRange position="274.5" alignment="Right" value="Mmm dd (right)" fill="grey" />
+			<subRange position="303.5" alignment="Right" value="week (right)" fill="grey" />
+			<subRange position="331.5" alignment="Right" value="2017 (right)" fill="grey" />
+		  </subRanges>
+	  </header>
+  </headers>
+
+	  <!-- Markets-specific bond headers at bottom of right-hand box -->
+	<bondHeaders>
+	  <!-- HEADER 21 -->
+	  <header name="header21">
+		  <fontName>EconomistSans_Medium</fontName>
+		  <fontSize>6</fontSize>
+		  <leading>17</leading>
+			<footnotes fontSize="4" superscript="2"/>
+		  <hScale>100</hScale>
+		  <baseline>0</baseline>
+		  <initialTab>false</initialTab>
+      <exists>true</exists>
+		  <!-- Rule below style options are: "Solid", "Dot", "Dash", "None" -->
+		  <rules>
+				<headerRule width="0.3" style="Solid" offset="-6"
+					strokeC="0" strokeM="0" strokeY="0" strokeK="100"
+					dotLength="0" dotGap="0"
+					start="0" end="160.75"
+					/>
+		  </rules>
+			<subRanges>
+				<subRange position="0" alignment="Left" value="US corporate bonds," />
+			</subRanges>
+	  </header>
+
+  <!-- HEADER 22 -->
+	  <header name="header22">
+		  <fontName>EconomistSans_Light</fontName>
+		  <fontSize>6</fontSize>
+		  <leading>8.5</leading>
+			<footnotes fontSize="4" superscript="2"/>
+		  <hScale>100</hScale>
+		  <baseline>0</baseline>
+		  <!-- Rule below style options are: "Solid", "Dot", "Dash", "None" -->
+		  <initialTab>true</initialTab>
+      <exists>true</exists>
+			<subRanges>
+				<subRange position="159.75" alignment="Right" value="@endlastyear" fill="grey" />
+			</subRanges>
+	  </header>
+
+  <!-- HEADER 23 -->
+	  <header name="header23">
+		  <fontName>EconomistSans_Light</fontName>
+		  <fontSize>6</fontSize>
+		  <leading>8.5</leading>
+			<footnotes fontSize="4" superscript="2"/>
+		  <hScale>100</hScale>
+		  <baseline>0</baseline>
+		  <fill>grey</fill>
+      <exists>true</exists>
+		  <!-- Rule below style options are: "Solid", "Dot", "Dash", "None" -->
+		  <rules>
+			<headerRule width="0.3" style="Solid" offset="3.5"
+			  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
+				dotLength="0" dotGap="0"
+				start="0" end="160.75"
+				/>
+		  </rules>
+		  <initialTab>false</initialTab>
+		  <subRanges>
+				<subRange position="0" alignment="Left" value="Basis points" fill="grey"/>
+				<subRange position="131" alignment="Right" value="latest" fontName="EconomistSans_Light" fill="grey"/>
+				<subRange position="159.75" alignment="Right" value="@lastyear" fontName="EconomistSans_Light" fill="grey"/>
+		  </subRanges>
+	  </header>
+	</bondHeaders>
+
+  <!-- DATA -->
+  <data>
+		<!-- LEADING, TABS, H-SCALING, FONT NAME & SIZE, BASELINE, RULE-BELOW -->
+		<fontName>EconomistSans_Light</fontName>
+		<fontSize>6</fontSize>
+		<firstLeading>8.5</firstLeading>
+		<leading>8.5</leading>
+		<indent>0</indent>
+		<footnotes fontSize="4" superscript="2"/>
+		<hScale>100</hScale>
+		<baseline>0</baseline>
+		<rectOffset>0</rectOffset>
+		<explicit>false</explicit>
+		<fill>black</fill>
+
+	<!-- Rule below style options are: "Solid", "Dot", "Dash", "None"
+			 If "None" or "Solid", dotLength and dotGap are ignored
+			 For "Dot", current values are 0.01 and 2.05
+			 For "Dash", 6 and 1.75
+			 If explicit="true", rules are drawn according to the explicitRules node
+			 Otherwise, properties define ruler style for default lines, section ends and last line
+			 -->
+	<rules defaultRule="minorRule" sectionRule="solidRule" finalRule="solidRule" >
+		<!-- noRule must have an offset value -->
+		  <noRule width="0" style="None" offset="2.7" />
+		  <dotRule width="0.5" style="Dot" offset="2.7"
+			  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
+			  dotLength="0.01" dotGap="2.05"
+			  start="0" end="160.75"
+			/>
+      <!-- Added Feb'24: minor rule between rows -->
+      <minorRule width="0.25" style="Solid" offset="3.575"
+        strokeC="0" strokeM="0" strokeY="0" strokeK="25"
+        dotLength="0" dotGap="0"
+        start="0" end="160.75"
+      />
+		  <dashRule width="0.3" style="Dash" offset="2.7"
+			  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
+			  dotLength="6" dotGap="1.75"
+			  start="0" end="160.75"
+			  />
+		  <solidRule width="0.25" style="Solid" offset="3.575"
+			  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
+			  dotLength="0" dotGap="0"
+			  start="0" end="160.75"
+			  />
+	</rules>
+
+	<!--	explicitStyles governs a series of special cases that, so far, apply only to
+			Commodities; for all other tables, explicit="false" and these rules are
+			never even examined.
+			-->
+	<explicitStyles>
+	</explicitStyles>
+
+
+	<subRanges>
+		<subRange position="0" alignment="Left" isNumber="false" fontName="EconomistSans_Medium" />
+		<subRange position="1" alignment="Left" isNumber="false" overruleDPs="false" appendToPrevious="true" note="This is a dummy tabstop, since next string is appended to previous" fontName="EconomistSans_Light"/>
+		<subRange position="102" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" />
+		<subRange position="126" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" rLeft="111" rWidth="20" />
+		<subRange position="157.75" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" rLeft="140.75" rWidth="20" />
+	</subRanges>
+	<!-- Line numbers for section breaks
+		 Last line must be declared -->
+	<sectionBreaks>
+	  <sectionBreak>8</sectionBreak>
+	  <sectionBreak>18</sectionBreak>
+	  <sectionBreak>28</sectionBreak>
+	  <sectionBreak>31</sectionBreak>
+	  <sectionBreak>35</sectionBreak>
+	  <!-- sectionBreak>37</sectionBreak -->
+</sectionBreaks>
+  </data>
+
+  <!-- SOURCES AND FOOTNOTES
+		General "leading" is applied to para as a whole, then firstLeading to first line only -->
+  <foot>
+		<fontName>EconomistSans_Light</fontName>
+		<fontSize>6</fontSize>
+		<leading>8.5</leading>
+		<firstLeading>17</firstLeading>
+		<hScale>100</hScale>
+		<footnotes fontSize="6" superscript="0"/>
+		<baseline>0</baseline>
+		<fill>grey</fill>
+		<indent>0</indent>
+  </foot>
+
+</indicators>

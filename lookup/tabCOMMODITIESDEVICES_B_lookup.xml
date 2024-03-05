@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- COMMODITIES: all platforms (occasional version with extra column) -->
+
+<indicators>
+
+	<id>tabCOMMODITIESDEVICES_B</id>
+
+	<!-- NOTE ON FONT NAMES
+		 Illustrator refers to Officina fonts as "OfficinaSanITC-Book", etc.
+		 I need to name corresponding objects in the code, but cannot use hyphens as object names
+		 So in lookup files I substitute an underline ("_") for the hyphen ("-")
+		 Replacement of "_" with "-" is done in code...
+		 -->
+
+	<!-- LAYOUT -->
+	<layout>
+
+		<!-- BACKGROUND BOX -->
+		<backBox x="0" y="201"
+			width="159.5" height="201"
+			fillC="0" fillM="0" fillY="0" fillK="0"
+			strokeC="0" strokeM="0" strokeY="0" strokeK="0"/>
+
+		<!-- FLASH -->
+		<flash exists="false"
+			width="5" height="15"
+			fillC="0" fillM="100" fillY="100" fillK="0"
+			strokeC="0" strokeM="0" strokeY="0" strokeK="0" />
+
+		<!-- MARGINS FOR TEXT BOX -->
+		<margins top="0" left="0" right="0" bottom="0" />
+
+		<!-- 2ND TEXT BOX (RESERVES)
+			 Unless there is a second text box, just flag that it doesn't exist -->
+		<textBox2 exists="false" />
+
+		<!-- Background tints
+			 Can exist or not (Poll has no tints at all)
+			 If everyOther=true, lines are alternately tinted
+			 If false, tinting is section-based, as defined below in data node
+			 But note that if data node's "explicit" property is true, tinting is determined by data.explicitStyles...
+			 -->
+		<backTint exists="true" everyOther="false"
+			fillC="9" fillM="0" fillY="0" fillK="6"
+			width="159.5" height="7.6" firstHeight="8.275" offset="2.3" />
+
+	</layout>
+	<!-- LAYOUT ends -->
+
+
+  <!-- HEADERS -->
+  <headers>
+
+	  <!-- HEADER 1 -->
+	  <header name="header1">
+		<fontName>EconSansMed</fontName>
+		<fontSize>8.5</fontSize>
+		<leading>10</leading>
+		<hScale>100</hScale>
+		<baseline>0</baseline>
+		<footnotes fontSize="4" superscript="2"/>
+		<initialTab>false</initialTab>
+		<fill>black</fill>
+		<subRanges>
+			<!-- subRange attributes can override previous
+				tab- 	position: a number
+						alignment: Left, Center, Right, or Decimal -->
+			<subRange position="0" alignment="Left" />
+		</subRanges>
+	  </header>
+
+	  <header name="header2">
+		  <fontName>EconSansCndMed</fontName>
+		  <fontSize>6.5</fontSize>
+		  <leading>15</leading>
+			<footnotes fontSize="4" superscript="2"/>
+		  <hScale>100</hScale>
+		  <baseline>0</baseline>
+		  <initialTab>false</initialTab>
+			<fill>black</fill>
+		  <subRanges>
+				<subRange position="0" alignment="Left" />
+		  </subRanges>
+	  </header>
+
+	  <header name="header3">
+		  <fontName>EconSansCndReg</fontName>
+		  <fontSize>6</fontSize>
+		  <leading>3</leading>
+			<footnotes fontSize="4" superscript="2"/>
+		  <hScale>100</hScale>
+		  <baseline>0</baseline>
+		  <initialTab>true</initialTab>
+			<fill>grey</fill>
+		  <subRanges>
+				<subRange position="138" alignment="Center" />
+		  </subRanges>
+	  </header>
+
+	  <header name="header4">
+		  <fontName>EconSansCndReg</fontName>
+		  <fontSize>6</fontSize>
+		  <leading>7</leading>
+		<footnotes fontSize="4" superscript="2"/>
+		  <hScale>100</hScale>
+		  <baseline>0</baseline>
+		  <rules>
+				<headerRule width="0.3" style="Solid" offset="3"
+				  	strokeC="0" strokeM="0" strokeY="0" strokeK="100"
+					dotLength="0" dotGap="0"
+					start="0" end="159.5"
+					/>
+			</rules>
+		  <initialTab>false</initialTab>
+			<fill>black</fill>
+		  <subRanges>
+				<subRange position="0" alignment="Left" />
+				<subRange position="60" alignment="Right" fill="grey" />
+				<subRange position="85" alignment="Right" fill="grey" />
+				<subRange position="110" alignment="Right" fill="grey" />
+				<subRange position="126" alignment="Center" fill="grey" />
+				<subRange position="151" alignment="Center" fill="grey" />
+		  </subRanges>
+	  </header>
+
+	  <!--header name="header5">
+		  <fontName>EconSansCndReg</fontName>
+		  <fontSize>7</fontSize>
+		  <leading>6</leading>
+		<footnotes fontSize="4" superscript="2"/>
+		  <hScale>100</hScale>
+		  <baseline>0</baseline>
+		  <initialTab>true</initialTab>
+		  <subRanges>
+			<subRange position="59" alignment="Center" />
+			<subRange position="95" alignment="Center" />
+			<subRange position="126" alignment="Center" fontName="EconSansCndReg" />
+			<subRange position="153" alignment="Center" fontName="EconSansCndReg" />
+		  </subRanges>
+	  </header-->
+
+  </headers>
+
+
+  <!-- DATA -->
+  <data>
+		<!-- LEADING, TABS, H-SCALING, FONT NAME & SIZE, BASELINE, RULE-BELOW -->
+		<fontName>EconSansCndReg</fontName>
+		<fontSize>6.5</fontSize>
+		<firstLeading>9</firstLeading>
+		<leading>8.4</leading>
+		<indent>3</indent>
+		<footnotes fontSize="4" superscript="2"/>
+		<hScale>100</hScale>
+		<baseline>0</baseline>
+		<rectOffset>1</rectOffset>
+		<explicit>true</explicit>
+		<fill>black</fill>
+
+		<!-- Rule below style options are: "Solid", "Dot", "Dash", "None"
+				 If "None" or "Solid", dotLength and dotGap are ignored
+				 For "Dot", current values are 0.01 and 2.05
+				 For "Dash", 6 and 1.75
+				 If explicit="true", rules are drawn according to the explicitRules node
+				 Otherwise, properties define ruler style for default lines, section ends and last line
+				 -->
+		<rules defaultRule="noRule" sectionRule="solidRule" finalRule="solidRule" >
+			  <noRule width="0" style="None" offset="3.1" />
+			  <dotRule width="0.5" style="Dot" offset="3.1"
+				  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
+				  dotLength="0.01" dotGap="2.05"
+				  start="0" end="159.5"
+				/>
+			  <!-- Define rule below sections (section counts below) -->
+			  <dashRule width="0.3" style="Dash" offset="3.1"
+				  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
+				  dotLength="6" dotGap="1.75"
+				  start="0" end="159.5"
+				  />
+			  <!-- Define rule at bottom of data block -->
+			  <solidRule width="0.3" style="Solid" offset="3.1"
+				  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
+				  dotLength="0" dotGap="0"
+				  start="0" end="159.5"
+				  />
+		</rules>
+
+		<!--	explicitStyles governs a series of special cases that, so far, apply only to
+				Commodities; for all other tables, explicit="false" and these rules are
+				never even examined.
+					ruleStyle determines which of the rules styles (see immed'y above) is used under each line
+					initialTab="true" inserts an initial tab to indent the line
+					oneString="true" breaks the loop through one line after the
+						first string. Prevents some Commodities lines stacking up empty tab
+						characters and breaking the line...
+					indentRule value overwrites default "start" value to indent some rules
+				Look at the output EPS to see how these styles affect the result...
+				-->
+		<explicitStyles>
+			<r ruleStyle="noRule" tint="true" initialTab="false" oneString="true" fontName="EconSansCndMed"/>
+			<r ruleStyle="noRule" tint="false" indentRule="0" initialTab="false" oneString="false" fontName="EconSansCndReg"/>
+			<r ruleStyle="noRule" tint="true" indentRule="0" initialTab="false" oneString="false" fontName="EconSansCndReg"/>
+			<r ruleStyle="noRule" tint="false" initialTab="false" oneString="false" fontName="EconSansCndMed"/>
+			<r ruleStyle="noRule" tint="true" indentRule="5" initialTab="false" oneString="false" fontName="EconSansCndReg"/>
+			<r ruleStyle="noRule" tint="false" indentRule="5" initialTab="false" oneString="false" fontName="EconSansCndReg"/>
+			<r ruleStyle="solidRule" tint="true" indentRule="0" initialTab="false" oneString="false" fontName="EconSansCndReg" rTweak="3"/>
+			<r ruleStyle="noRule" tint="true" indentRule="0" initialTab="false" oneString="true" fontName="EconSansCndMed" leading="11.4"/>
+			<r ruleStyle="solidRule" tint="false" indentRule="0" initialTab="false" oneString="false" fontName="EconSansCndReg" rTweak="3" />
+			<r ruleStyle="noRule" tint="true" initialTab="false" oneString="true" fontName="EconSansCndMed" leading="11.4"/>
+			<r ruleStyle="solidRule" tint="false" indentRule="0" initialTab="false" oneString="false" fontName="EconSansCndReg" rTweak="3" />
+			<r ruleStyle="noRule" tint="true" initialTab="false" oneString="true" fontName="EconSansCndMed" leading="11.4"/>
+			<r ruleStyle="solidRule" tint="false" indentRule="0" initialTab="false" oneString="false" fontName="EconSansCndReg" rTweak="3" />
+			<r ruleStyle="noRule" tint="true" initialTab="false" oneString="true" fontName="EconSansCndMed" leading="11.4"/>
+			<r ruleStyle="solidRule" tint="false" indentRule="0" initialTab="false" oneString="false" fontName="EconSansCndReg"/>
+		</explicitStyles>
+
+		<subRanges>
+			<subRange position="0" alignment="Left" isNumber="false" />
+			<subRange position="6" alignment="Left" isNumber="false" />
+			<subRange position="60" alignment="Right" isNumber="true" dPlaces="1" overruleDPs="false" />
+			<subRange position="85" alignment="Right" isNumber="true" dPlaces="1" overruleDPs="false" />
+			<subRange position="110" alignment="Right" isNumber="true" dPlaces="1" overruleDPs="false" />
+			<subRange position="131" alignment="Right" isNumber="true" dPlaces="1" showPlus="false" overruleDPs="false" hasRect="true" rLeft="117" rWidth="18" />
+			<subRange position="158.5" alignment="Right" isNumber="true" dPlaces="1" showPlus="false" overruleDPs="false" hasRect="true" rLeft="141.5" rWidth="18" />
+			</subRanges>
+		<!-- Line numbers for section breaks
+			 Last line must be declared -->
+		<sectionBreaks>
+			<sectionBreak>0</sectionBreak>
+			<sectionBreak>7</sectionBreak>
+			<sectionBreak>9</sectionBreak>
+			<sectionBreak>11</sectionBreak>
+			<sectionBreak>13</sectionBreak>
+			<sectionBreak>15</sectionBreak>
+		</sectionBreaks>
+  </data>
+
+  <!-- SOURCES AND FOOTNOTES
+		General "leading" is applied to para as a whole, then firstLeading to first line only -->
+  <foot>
+		<fontName>EconSansCndLig</fontName>
+		<fontSize>6</fontSize>
+		<firstLeading>9</firstLeading>
+		<leading>7</leading>
+		<footnotes fontSize="6" superscript="0"/>
+		<hScale>100</hScale>
+		<baseline>0</baseline>
+		<fill>grey</fill>
+		<indent>0</indent>
+  </foot>
+
+</indicators>
+
+
+
