@@ -42,7 +42,7 @@
 			 -->
 		<backTint exists="false" everyOther="true"
 			fillC="9" fillM="0" fillY="0" fillK="6" left="66"
-			width="199.5" height="7.6" firstHeight="8.275" offset="2.3"
+			width="199.5" height="6.5" firstHeight="6.5" offset="2.6"
 		/>
 
 	</layout>
@@ -56,7 +56,7 @@
 	  <header name="header1">
 		<fontName>EconomistSans_Medium</fontName>
 		<fontSize>9</fontSize>
-		<leading>6.5</leading>
+		<leading>10</leading>
 		<hScale>100</hScale>
 		<baseline>0</baseline>
 		<footnotes fontSize="4" superscript="2"/>
@@ -84,7 +84,7 @@
 		  <initialTab>true</initialTab>
 		  <ignoreAfter>1</ignoreAfter>
 		  <subRanges>
-				<subRange position="262" alignment="Right" value="% change on" fill="grey" fontName="EconomistSans_Light" />
+				<subRange position="265" alignment="Right" value="% change on" fill="grey" fontName="EconomistSans_Light" />
 		  </subRanges>
 	  </header>
 
@@ -100,8 +100,8 @@
       <exists>true</exists>
 		  <subRanges>
 				<subRange position="206" alignment="Right" value="Index" fill="grey" fontName="EconomistSans_Light" />
-				<subRange position="232" alignment="Right" value="one" fill="grey" fontName="EconomistSans_Light" />
-				<subRange position="262" alignment="Right" value="@endlastyear" fill="grey" fontName="EconomistSans_Light" />
+				<subRange position="235" alignment="Right" value="one" fill="grey" fontName="EconomistSans_Light" />
+				<subRange position="265" alignment="Right" value="@endlastyear" fill="grey" fontName="EconomistSans_Light" />
 		  </subRanges>
 	  </header>
 
@@ -127,8 +127,8 @@
 		  <subRanges>
 				<subRange position="66" alignment="Left" value="In local currency" fill="grey" fontName="EconomistSans_Light" />
 				<subRange position="206" alignment="Right" value="Mmm dd" fill="grey" fontName="EconomistSans_Light" />
-				<subRange position="232" alignment="Right" value="week" fill="grey" fontName="EconomistSans_Light" />
-				<subRange position="262" alignment="Right" value="yyyy" fill="grey" fontName="EconomistSans_Light" />
+				<subRange position="235" alignment="Right" value="week" fill="grey" fontName="EconomistSans_Light" />
+				<subRange position="265" alignment="Right" value="yyyy" fill="grey" fontName="EconomistSans_Light" />
 		  </subRanges>
 	  </header>
   </headers>
@@ -174,7 +174,7 @@
 		  <initialTab>true</initialTab>
       <exists>true</exists>
 			<subRanges>
-				<subRange position="262" alignment="Right" value="@endlastyear" fill="grey" />
+				<subRange position="265" alignment="Right" value="@endlastyear" fill="grey" />
 			</subRanges>
 	  </header>
 
@@ -200,8 +200,8 @@
       <exists>true</exists>
 		  <subRanges>
 				<subRange position="0" alignment="Left" value="Basis points" fill="grey"/>
-				<subRange position="232" alignment="Right" value="latest" fontName="EconomistSans_Light" fill="grey"/>
-				<subRange position="262" alignment="Right" value="@lastyear" fontName="EconomistSans_Light" fill="grey"/>
+				<subRange position="235" alignment="Right" value="latest" fontName="EconomistSans_Light" fill="grey"/>
+				<subRange position="265" alignment="Right" value="@lastyear" fontName="EconomistSans_Light" fill="grey"/>
 		  </subRanges>
 	  </header>
 	</bondHeaders>
@@ -210,7 +210,7 @@
   <data>
 		<!-- LEADING, TABS, H-SCALING, FONT NAME & SIZE, BASELINE, RULE-BELOW -->
 		<fontName>EconomistSans_Light</fontName>
-		<fontSize>6.5</fontSize>
+		<fontSize>6</fontSize>
 		<firstLeading>8.5</firstLeading>
 		<leading>8.5</leading>
 		<indent>66</indent>
@@ -247,7 +247,7 @@
 			  dotLength="6" dotGap="1.75"
 			  start="66" end="265.5"
 			  />
-		  <solidRule width="0.3" style="Solid" offset="2.7"
+		  <solidRule width="0.3" style="Solid" offset="3.575"
 			  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
 			  dotLength="0" dotGap="0"
 			  start="66" end="265.5"

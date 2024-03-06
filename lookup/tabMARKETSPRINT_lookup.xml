@@ -11,7 +11,7 @@
 
 		<!-- BACKGROUND BOX -->
 		<backBox x="0" y="230"
-			width="332" height="230"
+			width="333" height="230"
 			fillC="0" fillM="0" fillY="0" fillK="0"
 			strokeC="0" strokeM="0" strokeY="0" strokeK="0"/>
 
@@ -39,7 +39,7 @@
 			 -->
 		<textBox2 exists="true"
 			gutterWidth="10.5"
-			textBox2Top="33.3"
+			textBox2Top="36.8"
 			textBox2Height="192.5"
 			textBox2JumpCount="24"
 			col1Depth="190"
@@ -81,7 +81,7 @@
 	  <header name="header1">
 		<fontName>EconomistSans_Medium</fontName>
 		<fontSize>9</fontSize>
-		<leading>6.5</leading>
+		<leading>10</leading>
 		<hScale>100</hScale>
 		<baseline>0</baseline>
 		<footnotes fontSize="4" superscript="2"/>
@@ -107,8 +107,8 @@
 		  <initialTab>true</initialTab>
       <exists>true</exists>
 		  <subRanges>
-				<subRange position="160.75" alignment="Right" value="% change on (left)" fill="grey"/>
-				<subRange position="331.5" alignment="Right" value="% change on (right)" fill="grey"/>
+				<subRange position="161" alignment="Right" value="% change on (left)" fill="grey"/>
+				<subRange position="332" alignment="Right" value="% change on (right)" fill="grey"/>
 		  </subRanges>
 	  </header>
 
@@ -123,12 +123,12 @@
 		  <initialTab>true</initialTab>
       <exists>true</exists>
 		  <subRanges>
-				<subRange position="102.75" alignment="Right" value="Index (left)" fill="grey" />
-				<subRange position="131.75" alignment="Right" value="one (left)" fill="grey" />
-				<subRange position="160.75" alignment="Right" value="@endlastyear (left)" fill="grey" />
-				<subRange position="274.5" alignment="Right" value="Index (right)" fill="grey" />
-				<subRange position="303.5" alignment="Right" value="one (right)" fill="grey" />
-				<subRange position="331.5" alignment="Right" value="@endlastyear (right)" fill="grey" />
+				<subRange position="102" alignment="Right" value="Index (left)" fill="grey" />
+				<subRange position="131.25" alignment="Right" value="one (left)" fill="grey" />
+				<subRange position="161" alignment="Right" value="@endlastyear (left)" fill="grey" />
+				<subRange position="273" alignment="Right" value="Index (right)" fill="grey" />
+				<subRange position="302.5" alignment="Right" value="one (right)" fill="grey" />
+				<subRange position="332" alignment="Right" value="@endlastyear (right)" fill="grey" />
 		  </subRanges>
 	  </header>
 
@@ -157,12 +157,12 @@
       <exists>true</exists>
 		  <subRanges>
 			<subRange position="0" alignment="Left" value="In local currency" fill="grey" />
-			<subRange position="102.75" alignment="Right" value="Mmm dd (left)" fill="grey" />
-			<subRange position="131.75" alignment="Right" value="week" fill="grey" />
-			<subRange position="160.75" alignment="Right" value="2017" fill="grey" />
-			<subRange position="274.5" alignment="Right" value="Mmm dd (right)" fill="grey" />
-			<subRange position="303.5" alignment="Right" value="week (right)" fill="grey" />
-			<subRange position="331.5" alignment="Right" value="2017 (right)" fill="grey" />
+			<subRange position="102" alignment="Right" value="Mmm dd (left)" fill="grey" />
+			<subRange position="131" alignment="Right" value="week" fill="grey" />
+			<subRange position="161" alignment="Right" value="2017" fill="grey" />
+			<subRange position="273" alignment="Right" value="Mmm dd (right)" fill="grey" />
+			<subRange position="302.5" alignment="Right" value="week (right)" fill="grey" />
+			<subRange position="332" alignment="Right" value="2017 (right)" fill="grey" />
 		  </subRanges>
 	  </header>
   </headers>
@@ -204,7 +204,7 @@
 		  <initialTab>true</initialTab>
       <exists>true</exists>
 			<subRanges>
-				<subRange position="159.75" alignment="Right" value="@endlastyear" fill="grey" />
+				<subRange position="160" alignment="Right" value="@endlastyear" fill="grey" />
 			</subRanges>
 	  </header>
 
@@ -230,7 +230,7 @@
 		  <subRanges>
 				<subRange position="0" alignment="Left" value="Basis points" fill="grey"/>
 				<subRange position="131" alignment="Right" value="latest" fontName="EconomistSans_Light" fill="grey"/>
-				<subRange position="159.75" alignment="Right" value="@lastyear" fontName="EconomistSans_Light" fill="grey"/>
+				<subRange position="160" alignment="Right" value="@lastyear" fontName="EconomistSans_Light" fill="grey"/>
 		  </subRanges>
 	  </header>
 	</bondHeaders>
@@ -295,8 +295,8 @@
 		<subRange position="0" alignment="Left" isNumber="false" fontName="EconomistSans_Medium" />
 		<subRange position="1" alignment="Left" isNumber="false" overruleDPs="false" appendToPrevious="true" note="This is a dummy tabstop, since next string is appended to previous" fontName="EconomistSans_Light"/>
 		<subRange position="102" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" />
-		<subRange position="126" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" rLeft="111" rWidth="20" />
-		<subRange position="157.75" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" rLeft="140.75" rWidth="20" />
+		<subRange position="127.25" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" rLeft="111" rWidth="20" />
+		<subRange position="157" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" rLeft="140.75" rWidth="20" />
 	</subRanges>
 	<!-- Line numbers for section breaks
 		 Last line must be declared -->

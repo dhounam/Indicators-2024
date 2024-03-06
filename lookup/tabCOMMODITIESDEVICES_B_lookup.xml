@@ -18,7 +18,7 @@
 
 		<!-- BACKGROUND BOX -->
 		<backBox x="0" y="200"
-			width="159.5" height="200"
+			width="160" height="200"
 			fillC="0" fillM="0" fillY="0" fillK="0"
 			strokeC="0" strokeM="0" strokeY="0" strokeK="0"/>
 
@@ -75,7 +75,7 @@
 	  <header name="header2">
 		  <fontName>EconomistSans_Medium</fontName>
 		  <fontSize>6</fontSize>
-		  <leading>15</leading>
+		  <leading>12</leading>
 			<footnotes fontSize="4" superscript="2"/>
 		  <hScale>100</hScale>
 		  <baseline>0</baseline>
@@ -90,7 +90,7 @@
 	  <header name="header3">
 		  <fontName>EconomistSans_Light</fontName>
 		  <fontSize>6</fontSize>
-		  <leading>3</leading>
+		  <leading>6</leading>
 			<footnotes fontSize="4" superscript="2"/>
 		  <hScale>100</hScale>
 		  <baseline>0</baseline>
@@ -99,7 +99,7 @@
 			<fill>grey</fill>
       <exists>true</exists>
 		  <subRanges>
-				<subRange position="138" alignment="Center" />
+				<subRange position="160" alignment="Right" />
 		  </subRanges>
 	  </header>
 
@@ -124,9 +124,9 @@
 				<subRange position="0" alignment="Left" />
 				<subRange position="60" alignment="Right" fill="grey" />
 				<subRange position="85" alignment="Right" fill="grey" />
-				<subRange position="110" alignment="Right" fill="grey" />
-				<subRange position="126" alignment="Center" fill="grey" />
-				<subRange position="151" alignment="Center" fill="grey" />
+				<subRange position="104" alignment="Right" fill="grey" />
+				<subRange position="130" alignment="Right" fill="grey" />
+				<subRange position="160" alignment="Right" fill="grey" />
 		  </subRanges>
 	  </header>
 
@@ -238,7 +238,7 @@
   <foot>
 		<fontName>EconomistSans_Light</fontName>
 		<fontSize>6</fontSize>
-		<firstLeading>8.5</firstLeading>
+		<firstLeading>10</firstLeading>
 		<leading>8.5</leading>
 		<footnotes fontSize="6" superscript="0"/>
 		<hScale>100</hScale>

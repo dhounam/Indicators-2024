@@ -120,7 +120,7 @@
 	  <header name="header2">
 		<fontName>EconomistSans_Medium</fontName>
 		<fontSize>6</fontSize>
-		<leading>5</leading>
+		<leading>8</leading>
 		<hScale>100</hScale>
 		<baseline>0</baseline>
 		<footnotes fontSize="4" superscript="2"/>
@@ -163,7 +163,7 @@
 		  <subRanges>
 				<subRange position="100" alignment="Left" fill="grey" value="% change on year ago" />
 				<subRange position="202" alignment="Left" fill="grey" value="% change on a year ago" />
-				<subRange position="269" alignment="Left" fontSize="7.5" value="rate" fontName="EconomistSans_Medium" />
+				<subRange position="269" alignment="Left" fill="black" value="rate" fontName="EconomistSans_Medium" />
 		  </subRanges>
 	  </header>
 
@@ -207,8 +207,8 @@
   	</colours>
   	<width>0.25</width>
   	<lineEnd>0</lineEnd>
-  	<y1>394.3</y1>
-  	<y2>415.8</y2>
+  	<y1>389.7</y1>
+  	<y2>411.2</y2>
   	<lefts>
 	  	<left>97</left>
 	  	<left>199</left>
@@ -344,7 +344,7 @@
   <foot>
 		<fontName>EconomistSans_Light</fontName>
 		<fontSize>6</fontSize>
-		<firstLeading>8.5</firstLeading>
+		<firstLeading>12.5</firstLeading>
 		<leading>8.5</leading>
 		<footnotes fontSize="6" superscript="0"/>
 		<hScale>100</hScale>

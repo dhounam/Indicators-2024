@@ -73,8 +73,8 @@ var c_tName = "Text block 1";
 // 	(these are the only tables that split)
 // Each element in turn consists of a six-element sub-array comprising:
 //	0 	   - the number of HEADER lines)
-//	1/2/3	- three SECTION LENGTH sub-sub-arr for each section (A/B/C) and each
-// 	  		listing the number of lines in each sub-section. For Markets, section 3's
+//	1/2/3	- three SECTION LENGTH sub-sub-arrays for each section (A/B/C), each
+// 	  		 listing the number of lines in each sub-section. For Markets, section 3's
 //				 third array-value (5) is the number of lines in the US bonds appendix, which
 //				 I'm treating as another section
 //	4	    - the NUMBER of the file to read in and export...
@@ -89,8 +89,8 @@ var c_tName = "Text block 1";
 //	2=Markets   	201
 //	3=Commodities 401
 var g_lineArray = [
-	[5,Array(5,9),Array(8,11),Array(6,4),"101","Ecodata 1","false"],
-	[5,Array(5,9),Array(8,11),Array(6,4),"102","Ecodata 2","false"],
+	[5,Array(5,10),Array(7,12),Array(5,4),"101","Ecodata 1","false"],
+	[5,Array(5,10),Array(7,12),Array(5,4),"102","Ecodata 2","false"],
 	[4,Array(8,10),Array(10,3),Array(4,2,5),"201","Markets","false"],
 	[,,,,"401","Commodities","false"]
 ]
