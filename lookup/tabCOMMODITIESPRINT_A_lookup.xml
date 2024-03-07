@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- COMMODITIES: all platforms ("normal" version) -->
+<!-- COMMODITIES: all platforms ("normal" version) (INT401) -->
 
 <indicators>
 
@@ -16,8 +16,8 @@
 	<layout>
 
 		<!-- BACKGROUND BOX (note: y was 201; changed to 210 2.10.23) -->   
-		<backBox x="0" y="200"
-			width="160" height="200"
+		<backBox x="0" y="202"
+			width="160" height="202"
 			fillC="0" fillM="0" fillY="0" fillK="0"
 			strokeC="0" strokeM="0" strokeY="0" strokeK="0"/>
 
@@ -55,7 +55,7 @@
 	  <header name="header1">
       <fontName>EconomistSans_Medium</fontName>
       <fontSize>9</fontSize>
-      <leading>10</leading>
+      <leading>10.183</leading>
       <hScale>100</hScale>
       <baseline>0</baseline>
       <footnotes fontSize="4" superscript="2"/>
@@ -74,7 +74,7 @@
 	  <header name="header2">
 		  <fontName>EconomistSans_Medium</fontName>
 		  <fontSize>6</fontSize>
-		  <leading>12</leading>
+		  <leading>13.1</leading>
 			<footnotes fontSize="4" superscript="2"/>
 		  <hScale>100</hScale>
 		  <baseline>0</baseline>
@@ -112,7 +112,7 @@
 		  <baseline>0</baseline>
       <exists>true</exists>
 		  <rules>
-				<headerRule width="0.25" style="Solid" offset="3"
+				<headerRule width="0.25" style="Solid" offset="2.8"
           strokeC="0" strokeM="0" strokeY="0" strokeK="100"
 					dotLength="0" dotGap="0"
 					start="0" end="160"

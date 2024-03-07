@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- COMMODITIES: digital ("normal" version)
+<!-- COMMODITIES: digital ("normal" version) (INT401)
      NOTE: after main header, ALL LINES & RULES
      ARE INDENTED BY 66px -->
 
@@ -19,8 +19,8 @@
 	<layout>
 
 		<!-- BACKGROUND BOX -->
-		<backBox x="0" y="200"
-			width="332" height="200"
+		<backBox x="0" y="205"
+			width="332" height="205"
 			fillC="0" fillM="0" fillY="0" fillK="0"
 			strokeC="0" strokeM="0" strokeY="0" strokeK="0"/>
 
@@ -240,7 +240,7 @@
   <foot>
 		<fontName>EconomistSans_Light</fontName>
 		<fontSize>6</fontSize>
-		<firstLeading>8.5</firstLeading>
+		<firstLeading>12.5</firstLeading>
 		<leading>8.5</leading>
 		<footnotes fontSize="6" superscript="0"/>
 		<hScale>100</hScale>

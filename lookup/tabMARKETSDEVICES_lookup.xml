@@ -286,7 +286,7 @@
   <foot>
 		<fontName>EconomistSans_Light</fontName>
 		<fontSize>6</fontSize>
-		<firstLeading>8.5</firstLeading>
+		<firstLeading>12.5</firstLeading>
 		<leading>8.5</leading>
 		<hScale>100</hScale>
 		<footnotes fontSize="6" superscript="0"/>
