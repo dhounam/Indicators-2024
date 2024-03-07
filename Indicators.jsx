@@ -54,9 +54,9 @@ const c_authorPhone = "07825 994445";
 // PATH TO LOCAL DEV SETUP CHANGED FEB'24
 const c_configFileMacLocal = "~/Development/Indicators/Indicators_config.xml";
 // NETWORK PATHS CHANGE LATER, FOR DEPLOYMENT (but basically, just lose the '2023' suffix)
-const c_configFileMacServer = "/Volumes/Data/Indicators-2023/Indicators_config_2023.xml";
+const c_configFileMacServer = "/Volumes/Data/Indicators/Indicators_config.xml";
 // Windows has only a server version
-const c_configFileWindows = "/T/Indicators-2023/Indicators_config_2023.xml";
+const c_configFileWindows = "/T/Indicators/Indicators_config.xml";
 
 // Tab character
 const c_tabChar = "	";
@@ -2824,7 +2824,7 @@ function symbolTabTweak(fStr) {
 				tweakVal += 7.5;
 				break;
 			case "†":
-				tweakVal += 1.83;
+				tweakVal += 2.5;
 				break;
 			case "††":
 				tweakVal += 3.58;

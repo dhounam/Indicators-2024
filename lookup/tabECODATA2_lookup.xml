@@ -313,12 +313,12 @@
 			 -->
 		<subRanges>
 			<subRange position="0" alignment="Left" isNumber="false" fontName="EconomistSans_Light" />
-			<subRange position="86" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" rLeft="70" rWidth="20" />
-			<subRange position="146" alignment="Right" isNumber="true" rLeft="130" rWidth="20" dPlaces="1" overruleDPs="false" />
-			<subRange position="196" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="true" rLeft="180" rWidth="20"  />
+			<subRange position="86.3" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" rLeft="70" rWidth="20" />
+			<subRange position="146.3" alignment="Right" isNumber="true" rLeft="130" rWidth="20" dPlaces="1" overruleDPs="false" />
+			<subRange position="196.3" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="true" rLeft="180" rWidth="20"  />
 			<subRange position="252" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="true" />
 			<subRange position="292" alignment="Right" isNumber="true" showPlus="false" dPlaces="2" overruleDPs="true" />
-			<subRange position="328" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="true" rLeft="312" rWidth="20" />
+			<subRange position="328.3" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="true" rLeft="312" rWidth="20" />
 		</subRanges>
 
 		<!-- SECTION BREAKS

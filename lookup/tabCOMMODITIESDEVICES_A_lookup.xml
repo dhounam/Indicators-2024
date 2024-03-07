@@ -206,11 +206,11 @@
 		<r ruleStyle="solidRule" tint="true" indentRule="66" initialTab="false" oneString="false" fontName="EconomistSans_Light" rTweak="3"/>
 		<r ruleStyle="minorRule" tint="true" indentRule="66" initialTab="false" oneString="true" fontName="EconomistSans_Medium" leading="11.4"/>
 		<r ruleStyle="solidRule" tint="false" indentRule="66" initialTab="false" oneString="false" fontName="EconomistSans_Light" rTweak="3" />
-		<r ruleStyle="minorRule" tint="true" initialTab="false" oneString="true" fontName="EconomistSans_Medium" leading="11.4"/>
+		<r ruleStyle="minorRule" tint="true" indentRule="66" initialTab="false" oneString="true" fontName="EconomistSans_Medium" leading="11.4"/>
 		<r ruleStyle="solidRule" tint="false" indentRule="66" initialTab="false" oneString="false" fontName="EconomistSans_Light" rTweak="3" />
-		<r ruleStyle="minorRule" tint="true" initialTab="false" oneString="true" fontName="EconomistSans_Medium" leading="11.4"/>
+		<r ruleStyle="minorRule" tint="true" indentRule="66" initialTab="false" oneString="true" fontName="EconomistSans_Medium" leading="11.4"/>
 		<r ruleStyle="solidRule" tint="false" indentRule="66" initialTab="false" oneString="false" fontName="EconomistSans_Light" rTweak="3" />
-		<r ruleStyle="minorRule" tint="true" initialTab="false" oneString="true" fontName="EconomistSans_Medium" leading="11.4"/>
+		<r ruleStyle="minorRule" tint="true" indentRule="66" initialTab="false" oneString="true" fontName="EconomistSans_Medium" leading="11.4"/>
 		<r ruleStyle="solidRule" tint="false" indentRule="66" initialTab="false" oneString="false" fontName="EconomistSans_Light"/>
 	</explicitStyles>
 

@@ -74,7 +74,7 @@
 	  <header name="header2">
 		  <fontName>EconomistSans_Medium</fontName>
 		  <fontSize>6</fontSize>
-		  <leading>9</leading>
+		  <leading>12</leading>
 			<footnotes fontSize="4" superscript="2"/>
 		  <hScale>100</hScale>
 		  <baseline>0</baseline>
@@ -90,7 +90,7 @@
 	  <header name="header3">
 		  <fontName>EconomistSans_Light</fontName>
 		  <fontSize>6</fontSize>
-		  <leading>6</leading>
+		  <leading>3</leading>
 			<footnotes fontSize="4" superscript="2"/>
 		  <hScale>100</hScale>
 		  <baseline>0</baseline>
@@ -238,7 +238,7 @@
   <foot>
 		<fontName>EconomistSans_Light</fontName>
 		<fontSize>6</fontSize>
-		<firstLeading>10.5</firstLeading>
+		<firstLeading>11.5</firstLeading>
 		<leading>8.5</leading>
 		<footnotes fontSize="6" superscript="0"/>
 		<hScale>100</hScale>

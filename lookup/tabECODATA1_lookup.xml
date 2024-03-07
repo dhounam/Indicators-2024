@@ -145,9 +145,9 @@
 		  <initialTab>true</initialTab>
       <exists>true</exists>
 		  <subRanges>
-				<subRange position="100" alignment="Left" value="Gross domestic product" />
+				<subRange position="101" alignment="Left" value="Gross domestic product" />
 				<subRange position="202" alignment="Left" value="Consumer prices" />
-				<subRange position="269" alignment="Left" value="Unemployment" />
+				<subRange position="275" alignment="Left" value="Unemployment" />
 		  </subRanges>
 	  </header>
 
@@ -161,9 +161,9 @@
   		<initialTab>true</initialTab>
       <exists>true</exists>
 		  <subRanges>
-				<subRange position="100" alignment="Left" fill="grey" value="% change on year ago" />
+				<subRange position="101" alignment="Left" fill="grey" value="% change on year ago" />
 				<subRange position="202" alignment="Left" fill="grey" value="% change on a year ago" />
-				<subRange position="269" alignment="Left" fill="black" value="rate" fontName="EconomistSans_Medium" />
+				<subRange position="275" alignment="Left" fill="black" value="rate" fontName="EconomistSans_Medium" />
 		  </subRanges>
 	  </header>
 
@@ -186,12 +186,12 @@
   		<initialTab>true</initialTab>
       <exists>true</exists>
       <subRanges>
-				<subRange position="100" alignment="Left" value="latest" />
-				<subRange position="151" alignment="Center" value="quarter" />
-				<subRange position="166" alignment="Left" value="2016†" />
+				<subRange position="101" alignment="Left" value="latest" />
+				<subRange position="157" alignment="Right" value="quarter" />
+				<subRange position="177" alignment="Right" value="2016†" />
 				<subRange position="202" alignment="Left" value="latest" />
-				<subRange position="251" alignment="Right" value="2016†" />
-				<subRange position="269" alignment="Left" value="%" />
+				<subRange position="253" alignment="Right" value="2016†" />
+				<subRange position="275" alignment="Left" value="%" />
 		  </subRanges>
 	  </header>
 
@@ -210,9 +210,9 @@
   	<y1>389.7</y1>
   	<y2>411.2</y2>
   	<lefts>
-	  	<left>97</left>
+	  	<left>98</left>
 	  	<left>199</left>
-	  	<left>267</left>
+	  	<left>272</left>
 	  </lefts>
   </dividers>
 
@@ -312,11 +312,11 @@
 			 -->
 		<subRanges>
 			<subRange position="0" alignment="Left" isNumber="false" fontName="EconomistSans_Light" />
-			<subRange position="113" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="true" rLeft="98" rWidth="20" />
+			<subRange position="114" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="true" rLeft="98" rWidth="20" />
 			<subRange position="120" alignment="Left" fontSize="5" isNumber="false" fill="grey" />
 			<subRange position="155" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="true" />
 			<subRange position="175" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="true" />
-			<subRange position="215" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="true" rLeft="199" rWidth="20" />
+			<subRange position="215.5" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="true" rLeft="199" rWidth="20" />
 			<subRange position="222" alignment="Left" isNumber="false" fontSize="5" fill="grey" />
 			<subRange position="251" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="true" />
 			<subRange position="284" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="true" />

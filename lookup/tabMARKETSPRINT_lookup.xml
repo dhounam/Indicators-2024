@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- MARKETS: print version -->
+<!-- MARKETS: print version (INT200) -->
 
 <indicators>
 
@@ -11,7 +11,7 @@
 
 		<!-- BACKGROUND BOX -->
 		<backBox x="0" y="230"
-			width="333" height="230"
+			width="332" height="230"
 			fillC="0" fillM="0" fillY="0" fillK="0"
 			strokeC="0" strokeM="0" strokeY="0" strokeK="0"/>
 
@@ -108,7 +108,7 @@
       <exists>true</exists>
 		  <subRanges>
 				<subRange position="161" alignment="Right" value="% change on (left)" fill="grey"/>
-				<subRange position="332" alignment="Right" value="% change on (right)" fill="grey"/>
+				<subRange position="331.9" alignment="Right" value="% change on (right)" fill="grey"/>
 		  </subRanges>
 	  </header>
 
@@ -128,7 +128,7 @@
 				<subRange position="161" alignment="Right" value="@endlastyear (left)" fill="grey" />
 				<subRange position="273" alignment="Right" value="Index (right)" fill="grey" />
 				<subRange position="302.5" alignment="Right" value="one (right)" fill="grey" />
-				<subRange position="332" alignment="Right" value="@endlastyear (right)" fill="grey" />
+				<subRange position="331.9" alignment="Right" value="@endlastyear (right)" fill="grey" />
 		  </subRanges>
 	  </header>
 
@@ -162,7 +162,7 @@
 			<subRange position="161" alignment="Right" value="2017" fill="grey" />
 			<subRange position="273" alignment="Right" value="Mmm dd (right)" fill="grey" />
 			<subRange position="302.5" alignment="Right" value="week (right)" fill="grey" />
-			<subRange position="332" alignment="Right" value="2017 (right)" fill="grey" />
+			<subRange position="331.9" alignment="Right" value="2017 (right)" fill="grey" />
 		  </subRanges>
 	  </header>
   </headers>
