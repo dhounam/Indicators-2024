@@ -158,20 +158,20 @@
 			 Otherwise, properties define ruler style for default lines, section ends and last line
 			 -->
 	<rules defaultRule="minorRule" sectionRule="solidRule" finalRule="solidRule" >
-		  <noRule width="0" style="None" offset="3.1" />
-		  <dotRule width="0.5" style="Dot" offset="3.1"
+		  <noRule width="0" style="None" offset="3.3" />
+		  <dotRule width="0.5" style="Dot" offset="3.3"
 			  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
 			  dotLength="0.01" dotGap="2.05"
 			  start="0" end="160"
 			/>
       <!-- Added Feb'24: minor rule between rows -->
-      <minorRule width="0.25" style="Solid" offset="3.3" wasoffset="3.1"
+      <minorRule width="0.25" style="Solid" offset="3.3" wasoffset="3.3"
         strokeC="0" strokeM="0" strokeY="0" strokeK="25"
         dotLength="0" dotGap="0"
         start="0" end="160"
       />
 		  <!-- Define rule below sections (section counts below) -->
-		  <dashRule width="0.3" style="Dash" offset="3.1"
+		  <dashRule width="0.3" style="Dash" offset="3.3"
 			  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
 			  dotLength="6" dotGap="1.75"
 			  start="0" end="160"
@@ -210,7 +210,7 @@
 		<r ruleStyle="minorRule" tint="true" initialTab="false" oneString="true" fontName="EconomistSans_Medium" leading="11.5"/>
 		<r ruleStyle="solidRule" tint="false" indentRule="0" initialTab="false" oneString="false" fontName="EconomistSans_Light" rTweak="3" />
 		<r ruleStyle="minorRule" tint="true" initialTab="false" oneString="true" fontName="EconomistSans_Medium" leading="11.5"/>
-		<r ruleStyle="minorRule" tint="false" indentRule="0" initialTab="false" oneString="false" fontName="EconomistSans_Light"/>
+		<r ruleStyle="solidRule" tint="false" indentRule="0" initialTab="false" oneString="false" fontName="EconomistSans_Light"/>
 	</explicitStyles>
 
 	<subRanges>
