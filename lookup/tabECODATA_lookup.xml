@@ -360,7 +360,7 @@
   <foot>
 		<fontName>EconomistSans_Light</fontName>
 		<fontSize>6</fontSize>
-		<firstLeading>8.5</firstLeading>
+		<firstLeading>10.5</firstLeading>
 		<leading>8.5</leading>
 		<footnotes fontSize="6" superscript="0"/>
 		<hScale>100</hScale>

@@ -38,9 +38,10 @@
           + gutter, by which the tinted rects are moved
 			 -->
 		<textBox2 exists="true"
-			gutterWidth="10.5"
+			gutterWidth="12"
+      wasgutterWidth="10.5"
 			textBox2Top="36.8"
-			textBox2Height="192.5"
+			textBox2Height="194"
 			textBox2JumpCount="24"
 			col1Depth="190"
 			belowSubtitle="10"
@@ -66,7 +67,7 @@
 			 -->
 		<backTint exists="false" everyOther="true"
 			fillC="9" fillM="0" fillY="0" fillK="6"
-			width="160.75" height="6.5" firstHeight="6.5"
+			width="160" height="6.5" firstHeight="6.5"
       offset="2.6" oldoffset="2.3 then 3.5"
 		/>
 
@@ -100,14 +101,14 @@
 	  <header name="header2">
 		  <fontName>EconomistSans_Light</fontName>
 		  <fontSize>6</fontSize>
-		  <leading>7.5</leading>
+		  <leading>7</leading>
 		  <hScale>100</hScale>
 		  <baseline>0</baseline>
 			<footnotes fontSize="4" superscript="2"/>
 		  <initialTab>true</initialTab>
       <exists>true</exists>
 		  <subRanges>
-				<subRange position="161" alignment="Right" value="% change on (left)" fill="grey"/>
+				<subRange position="160" alignment="Right" value="% change on (left)" fill="grey"/>
 				<subRange position="331.9" alignment="Right" value="% change on (right)" fill="grey"/>
 		  </subRanges>
 	  </header>
@@ -125,7 +126,7 @@
 		  <subRanges>
 				<subRange position="102" alignment="Right" value="Index (left)" fill="grey" />
 				<subRange position="131.25" alignment="Right" value="one (left)" fill="grey" />
-				<subRange position="161" alignment="Right" value="@endlastyear (left)" fill="grey" />
+				<subRange position="160" alignment="Right" value="@endlastyear (left)" fill="grey" />
 				<subRange position="273" alignment="Right" value="Index (right)" fill="grey" />
 				<subRange position="302.5" alignment="Right" value="one (right)" fill="grey" />
 				<subRange position="331.9" alignment="Right" value="@endlastyear (right)" fill="grey" />
@@ -145,12 +146,12 @@
         <headerRule width="0.3" style="Solid" offset="3.6"
             strokeC="0" strokeM="0" strokeY="0" strokeK="100"
           dotLength="0" dotGap="0"
-          start="0" end="160.75"
+          start="0" end="160"
           />
         <headerRule width="0.3" style="Solid" offset="3.6"
             strokeC="0" strokeM="0" strokeY="0" strokeK="100"
           dotLength="0" dotGap="0"
-          start="171.25" end="332"
+          start="171.9" end="332"
 				/>
 		  </rules>
 		  <initialTab>false</initialTab>
@@ -159,7 +160,7 @@
 			<subRange position="0" alignment="Left" value="In local currency" fill="grey" />
 			<subRange position="102" alignment="Right" value="Mmm dd (left)" fill="grey" />
 			<subRange position="131" alignment="Right" value="week" fill="grey" />
-			<subRange position="161" alignment="Right" value="2017" fill="grey" />
+			<subRange position="160" alignment="Right" value="2017" fill="grey" />
 			<subRange position="273" alignment="Right" value="Mmm dd (right)" fill="grey" />
 			<subRange position="302.5" alignment="Right" value="week (right)" fill="grey" />
 			<subRange position="331.9" alignment="Right" value="2017 (right)" fill="grey" />
@@ -184,7 +185,7 @@
 				<headerRule width="0.3" style="Solid" offset="-6"
 					strokeC="0" strokeM="0" strokeY="0" strokeK="100"
 					dotLength="0" dotGap="0"
-					start="0" end="160.75"
+					start="0" end="160"
 					/>
 		  </rules>
 			<subRanges>
@@ -204,7 +205,7 @@
 		  <initialTab>true</initialTab>
       <exists>true</exists>
 			<subRanges>
-				<subRange position="160" alignment="Right" value="@endlastyear" fill="grey" />
+				<subRange position="159.9" alignment="Right" value="@endlastyear" fill="grey" />
 			</subRanges>
 	  </header>
 
@@ -223,14 +224,14 @@
 			<headerRule width="0.3" style="Solid" offset="3.5"
 			  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
 				dotLength="0" dotGap="0"
-				start="0" end="160.75"
+				start="0" end="160"
 				/>
 		  </rules>
 		  <initialTab>false</initialTab>
 		  <subRanges>
 				<subRange position="0" alignment="Left" value="Basis points" fill="grey"/>
 				<subRange position="131" alignment="Right" value="latest" fontName="EconomistSans_Light" fill="grey"/>
-				<subRange position="160" alignment="Right" value="@lastyear" fontName="EconomistSans_Light" fill="grey"/>
+				<subRange position="159.9" alignment="Right" value="@lastyear" fontName="EconomistSans_Light" fill="grey"/>
 		  </subRanges>
 	  </header>
 	</bondHeaders>
@@ -263,23 +264,23 @@
 		  <dotRule width="0.5" style="Dot" offset="2.7"
 			  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
 			  dotLength="0.01" dotGap="2.05"
-			  start="0" end="160.75"
+			  start="0" end="160"
 			/>
       <!-- Added Feb'24: minor rule between rows -->
       <minorRule width="0.25" style="Solid" offset="3.575"
         strokeC="0" strokeM="0" strokeY="0" strokeK="25"
         dotLength="0" dotGap="0"
-        start="0" end="160.75"
+        start="0" end="160"
       />
 		  <dashRule width="0.3" style="Dash" offset="2.7"
 			  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
 			  dotLength="6" dotGap="1.75"
-			  start="0" end="160.75"
+			  start="0" end="160"
 			  />
 		  <solidRule width="0.25" style="Solid" offset="3.575"
 			  strokeC="0" strokeM="0" strokeY="0" strokeK="100"
 			  dotLength="0" dotGap="0"
-			  start="0" end="160.75"
+			  start="0" end="160"
 			  />
 	</rules>
 
@@ -296,7 +297,7 @@
 		<subRange position="1" alignment="Left" isNumber="false" overruleDPs="false" appendToPrevious="true" note="This is a dummy tabstop, since next string is appended to previous" fontName="EconomistSans_Light"/>
 		<subRange position="102" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" />
 		<subRange position="127.25" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" rLeft="111" rWidth="20" />
-		<subRange position="157" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" rLeft="140.75" rWidth="20" />
+		<subRange position="157" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" rLeft="140" rWidth="20" />
 	</subRanges>
 	<!-- Line numbers for section breaks
 		 Last line must be declared -->
@@ -316,7 +317,7 @@
 		<fontName>EconomistSans_Light</fontName>
 		<fontSize>6</fontSize>
 		<leading>8.5</leading>
-		<firstLeading>17</firstLeading>
+		<firstLeading>18.75</firstLeading>
 		<hScale>100</hScale>
 		<footnotes fontSize="6" superscript="0"/>
 		<baseline>0</baseline>
