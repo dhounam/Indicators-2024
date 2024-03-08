@@ -211,7 +211,7 @@
   	</colours>
   	<width>0.25</width>
   	<lineEnd>0</lineEnd>
-  	<y1>387.52</y1>
+  	<y1>387.9</y1>
   	<y2>409.4</y2>
   	<lefts>
 	  	<left>39</left>
@@ -332,7 +332,7 @@
 			<subRange position="211" alignment="Left" isNumber="false" fontSize="5" fill="grey" />
 			<subRange position="264" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" rLeft="248" rWidth="20" />
 			<subRange position="323" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" rLeft="307" rWidth="20" />
-			<subRange position="382" alignment="Right" isNumber="true" dPlaces="1" showPlus="false" overruleDPs="true" rLeft="367" rWidth="20" />
+			<subRange position="383.4" alignment="Right" isNumber="true" dPlaces="1" showPlus="false" overruleDPs="true" rLeft="367" rWidth="20" />
 			<subRange position="440" alignment="Right" isNumber="true" dPlaces="1" showPlus="false" overruleDPs="true" />
 			<subRange position="470" alignment="Right" isNumber="true" dPlaces="2" showPlus="false" overruleDPs="true" />
 			<subRange position="500" alignment="Right" isNumber="true" dPlaces="1" showPlus="false" overruleDPs="true" rLeft="484" rWidth="20" />
