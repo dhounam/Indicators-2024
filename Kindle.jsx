@@ -55,11 +55,11 @@ var c_fSeparator = '_';
 // PATHS ARE HARD-CODED
 // Local or server
 // *** Source folder ***
-var c_tableFolderLocal = "~/Desktop/Indicators-2023/kindle-source/"
+var c_tableFolderLocal = "~/Development/Indicators/kindle-source/"
 var c_tableFolderServer = "/Volumes/Graphics/Images/5_Workflow_Out/The Economist/"
 var c_tableFolderServerExtension = "/Web/eps/"
 // *** Target folder: ***
-var c_kindleFolderLocal = "~/Desktop/Indicators-2023/kindle-output/"
+var c_kindleFolderLocal = "~/Development/Indicators/kindle-output/"
 var c_kindleFolderServer = "/Volumes/Graphics/Images/3_Digital_Content_Platform/"
 
 // Name of single block of text (Was "Text block" until Table 7 divided...
