@@ -1159,6 +1159,14 @@ function drawHeaders()
 	if (dataHeaders == undefined) {
 		dataHeaders = g_dataXMLObj.root.headers;
 	}
+  // Inferential tweak Mar'24: in Print Markets,
+  // header 3, change 'index' to 'Index'
+  if (g_lookupXMLObj.id == 'tabMARKETSPRINT') {
+    var iStr = dataHeaders['header3'].h[3];
+    if (iStr == 'index') {
+      dataHeaders['header3'].h[3] = 'Index';
+    }
+  }
 	var lookupHeaders = g_lookupXMLObj.headers.header;
 	// I have to loop on one or the other. But since there are more properties rattling around
 	// inside the lookup file, let's loop on that...
@@ -1183,7 +1191,6 @@ function drawHeaders()
       if (sLen == 1) {
           stringArray.push(thisH.subRanges.subRange);
           stringArray[0].@value = dataHeaders["header" + hCount].h[0];
-
       }
       else {
         for (var i = 0; i < sLen; i ++) {
