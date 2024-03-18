@@ -89,8 +89,8 @@ var c_tName = "Text block 1";
 //	2=Markets   	201
 //	3=Commodities 401
 var g_lineArray = [
-	[5,Array(5,10),Array(7,12),Array(5,4),"101","Ecodata 1","false"],
-	[5,Array(5,10),Array(7,12),Array(5,4),"102","Ecodata 2","false"],
+	[5,Array(5,9),Array(8,11),Array(6,4),"101","Ecodata 1","false"],
+	[5,Array(5,9),Array(8,11),Array(6,4),"102","Ecodata 2","false"],
 	[4,Array(8,10),Array(10,3),Array(4,2,5),"201","Markets","false"],
 	[,,,,"401","Commodities","false"]
 ]
