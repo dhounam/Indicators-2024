@@ -1167,6 +1167,22 @@ function drawHeaders()
       dataHeaders['header3'].h[3] = 'Index';
     }
   }
+  // More inferential tweaks July'24:
+  //    Print EcoData (100) and
+  //    right-hand Digital EcoData (102)
+  // in headers, change 'latest,%' to 'latest, %'
+  if (g_lookupXMLObj.id == 'tabECODATA') {
+    var iStr = dataHeaders['header4'].h[8];
+    if (iStr == 'latest,%') {
+      dataHeaders['header4'].h[8] = 'latest, %';
+    }
+  }
+  if (g_lookupXMLObj.id == 'tabECODATA2') {
+    var iStr = dataHeaders['header5'].h[2];
+    if (iStr == 'latest,%') {
+      dataHeaders['header5'].h[2] = 'latest, %';
+    }
+  }
 	var lookupHeaders = g_lookupXMLObj.headers.header;
 	// I have to loop on one or the other. But since there are more properties rattling around
 	// inside the lookup file, let's loop on that...
