@@ -133,11 +133,6 @@ const c_defaultLineMiterLimit = 6;
 
 // Date-stamp for test-file naming
 const c_testDate = '20990101';
-// Rogue source string to delete from Ecodata footnotes
-const c_rogueSourceString = ' Source Source: Haver Analytics ';
-// Another inferential tweak, Oct'23, string appends to footnote
-// in ECODATA and ECODATA1
-const c_ecoDataExtraNote = ' Note: Euro area consumer prices are harmonised.'
 
 // *** GLOBALS ***
 
@@ -874,6 +869,10 @@ function processTable(tableObj)
 	//	lookup XML is in g_lookupXMLObj
 	// ***
 
+  // Now we've got the data file, let's do some
+  // annoying inferential fixes to various strings
+  doInferentialFixes();
+
 	// C)
 	// Open template and create background box + flash
 	// Also duplicate background box as text frame (twice for RESERVES)
@@ -1159,30 +1158,7 @@ function drawHeaders()
 	if (dataHeaders == undefined) {
 		dataHeaders = g_dataXMLObj.root.headers;
 	}
-  // Inferential tweak Mar'24: in Print Markets,
-  // header 3, change 'index' to 'Index'
-  if (g_lookupXMLObj.id == 'tabMARKETSPRINT') {
-    var iStr = dataHeaders['header3'].h[3];
-    if (iStr == 'index') {
-      dataHeaders['header3'].h[3] = 'Index';
-    }
-  }
-  // More inferential tweaks July'24:
-  //    Print EcoData (100) and
-  //    right-hand Digital EcoData (102)
-  // in headers, change 'latest,%' to 'latest, %'
-  if (g_lookupXMLObj.id == 'tabECODATA') {
-    var iStr = dataHeaders['header4'].h[8];
-    if (iStr == 'latest,%') {
-      dataHeaders['header4'].h[8] = 'latest, %';
-    }
-  }
-  if (g_lookupXMLObj.id == 'tabECODATA2') {
-    var iStr = dataHeaders['header5'].h[2];
-    if (iStr == 'latest,%') {
-      dataHeaders['header5'].h[2] = 'latest, %';
-    }
-  }
+
 	var lookupHeaders = g_lookupXMLObj.headers.header;
 	// I have to loop on one or the other. But since there are more properties rattling around
 	// inside the lookup file, let's loop on that...
@@ -1618,14 +1594,13 @@ function appendFootString(fStr, targBox, fLead) {
 	fStr = fStr.replace(c_newlineNoSpace, c_return);
 	fStr = fStr.replace(c_newlineAmpSpace, c_return);
 	fStr = fStr.replace(c_newlineAmpNoSpace, c_return);
-
   
   // ECODATA & ECODATA1 append inferential string to footnote
   // Added Oct'23
-  var id = g_lookupXMLObj.id;
-	if (id == 'tabECODATA' || id == 'tabECODATA1') {
-		fStr += c_ecoDataExtraNote;
-	}
+  // var id = g_lookupXMLObj.id;
+	// if (id == 'tabECODATA' || id == 'tabECODATA1') {
+	// 	fStr += c_ecoDataExtraNote;
+	// }
 
 	// Create paragraph object (with no contents)
 	var footPara = targBox.paragraphs.add("");
@@ -1642,9 +1617,6 @@ function appendFootString(fStr, targBox, fLead) {
 	setDefaultAttributes(footRange, 1);
 	// Italicise "The Economist"
 	italiciseEco(footRange);
-  // Deal with the rogue source string that can pop up
-  // in EcoData/EcoData1 footnote
-  deleteRogueSourceString(footRange);
 
 	// Leading for first line
 	try {
@@ -3419,26 +3391,6 @@ function italiciseEco(eRange)
 }
 // ITALICISE ECO ends
 
-// DELETE ROGUE SOURCE STRING
-// Entirely inferential function to remove a rogue source
-// string that keeps getting appended to EcoData/EcoData1 raw XML
-function deleteRogueSourceString(fRange) {
-  var cont = fRange.contents;
-  // Look for string in contents; if not found, return
-  var sFound = cont.search(c_rogueSourceString);
-  if (sFound < 0) {return fRange};
-  // Still here? Range contains string, so get length
-  var sLen = c_rogueSourceString.length;
-  // Get index of rogue range
-  myRe = new RegExp(c_rogueSourceString);
-  var sResult = myRe.exec(cont);
-  var rogueRange = fRange.characters[sResult.index];
-  rogueRange.length = sLen;
-  // See: https://ai-scripting.docsforadobe.dev/jsobjref/TextRange.html#textrange-remove
-  rogueRange.remove();
-}
-// DELETE ROGUE SOURCE STRING ends
-
 // GET F-NAME
 // Retrieves named font object from g_fontsObj
 function getFName(f) {
@@ -3587,3 +3539,70 @@ function formatNumberBy3(num, decpoint, sep) {
 return x;
 }
 // FORMAT NUMBERS BY 3 ends
+
+// DO INFERENTIAL FIXES
+// As of August'24, there were various errors in the raw XML
+// that nobody at the back end knew how to fix. So we have to
+// deal with them inferentially. I originally checked for the
+// bad values; but now I simply whack the fix in.
+// Raw XML for the current table is in the global g_dataXMLObj
+function doInferentialFixes() {
+  var id = g_lookupXMLObj.id
+  // All the strings to play with
+  // Inferential: rogue source string to delete from Ecodata footnotes
+  var rogueSourceString = ' Source Source: Haver Analytics ';
+  // string appended to footnote in ECODATA and ECODATA1
+  var ecoDataExtraNote = ' Note: Euro area consumer prices are harmonised.'
+  // String in MARKETS data
+  var nasCompString = 'NAS Comp';
+  // Header correction for ECODATA/1
+  var latestString = 'latest, %';
+
+  // MARKETS (print)
+  if (id == 'tabMARKETSPRINT') {
+    // Header 3, change 'index' to 'Index'
+    g_dataXMLObj.root.headers.header3.h[3] = 'Index';
+    // Second line of data, change ‘NAScomp’ to ‘NAS Comp’,
+    // so that item reads: ‘United States NAS Comp’
+    g_dataXMLObj.data.dataitems[1].dataitem[1].@value = nasCompString;
+  }
+  // MARKETS (digital).
+  if (id == 'tabMARKETSDEVICES') {
+    // See just above
+    g_dataXMLObj.data.dataitems[1].dataitem[1].@value = nasCompString;
+  }
+  // ECODATA
+  // ECODATA & ECODATA2 headers change 'latest,%' to 'latest, %'
+  // ECODATA & ECODATA1 delete rogue 'Hever' string and append another string to footnote
+  if (g_lookupXMLObj.id == 'tabECODATA') {
+    // NOTE: EcoData tables don't have a 'root' node
+    g_dataXMLObj.headers.header4.h[8] = latestString;
+    g_dataXMLObj.footnote = deleteRogueSourceString(g_dataXMLObj.footnote, rogueSourceString);
+    g_dataXMLObj.footnote += ecoDataExtraNote;
+    // alert(g_dataXMLObj.footnote)
+  }
+  if (g_lookupXMLObj.id == 'tabECODATA1') {
+    // g_dataXMLObj.headers.header5.h[2] = latestString;
+    g_dataXMLObj.footnote = deleteRogueSourceString(g_dataXMLObj.footnote, rogueSourceString);
+    g_dataXMLObj.footnote += ecoDataExtraNote;
+  }
+  if (g_lookupXMLObj.id == 'tabECODATA2') {
+    g_dataXMLObj.headers.header5.h[2] = latestString;
+  }
+}
+// DO INFERENTIAL FIXES ends
+
+// DELETE ROGUE SOURCE STRING
+// Called from doInferentialFixes to remove a rogue source
+// string that keeps getting appended to EcoData/EcoData1 raw XML
+function deleteRogueSourceString(fStr, rogueSourceString) {
+  // Note assumption that string is last in footnote
+  // Look for string
+  var sFound = fStr.search(rogueSourceString);
+  if (sFound >= 0) {
+    var start = fStr.indexOf(rogueSourceString);
+    fStr = fStr.slice(0, start);
+  }
+  return fStr;
+}
+// DELETE ROGUE SOURCE STRING ends
