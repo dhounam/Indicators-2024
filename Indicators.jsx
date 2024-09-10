@@ -7,6 +7,7 @@
   Revised file locations, 2022
   Remove Ilex component dependencies, April-May 2022
   Cleaning up, August 2022
+  Rationalise various inferential string fixes, August'24
 
   *******************************************************
   I did some further rationalisation during February 2023
@@ -3550,8 +3551,12 @@ function doInferentialFixes() {
   var id = g_lookupXMLObj.id
   // All the strings to play with
   // Inferential: rogue source string to delete from Ecodata footnotes
+  // NOTE: in the current live version (Sep'24), this string is:
   var rogueSourceString = ' Source Source: Haver Analytics ';
-  // string appended to footnote in ECODATA and ECODATA1
+  // However, the test version is currently sending it without the concluding space character:
+  // var rogueSourceString = ' Source Source: Haver Analytics';
+  //
+  // String appended to footnote in ECODATA and ECODATA1
   var ecoDataExtraNote = ' Note: Euro area consumer prices are harmonised.'
   // String in MARKETS data
   var nasCompString = 'NAS Comp';
@@ -3600,9 +3605,9 @@ function deleteRogueSourceString(fStr, rogueSourceString) {
   // Look for string
   var sFound = fStr.search(rogueSourceString);
   if (sFound >= 0) {
-    var start = fStr.indexOf(rogueSourceString);
-    fStr = fStr.slice(0, start);
-  }
+	  var start = fStr.indexOf(rogueSourceString);
+	  fStr = fStr.slice(0, start);
+	}
   return fStr;
 }
 // DELETE ROGUE SOURCE STRING ends
