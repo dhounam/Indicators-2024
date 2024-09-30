@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Update Feb 2024
+<!--  Update Sep'24
+		Adds paths for testing new XML feeds
+	Previous update Feb 2024
       Line row separators
       New fonts
       All code and lookup file names drop the 'yyyy' suffix (so plain 'Indicators.*' instead of 'Indicators-yyyy.*')
@@ -11,7 +13,7 @@
 		Previous update:
 			Reduces tables to: EcoData (1 pr, 2 dev), Markets (pr, dev) and Commodities (pr, dev)
 			Outputs to Workflow
-			-->
+-->
 <config>
 
   <!-- TABLES -->
@@ -94,10 +96,28 @@
   </serverWinPaths>
 
   <!-- TEST PATHS: Mac and Windows
-	  Until Feb 2022, there was a test source folder on the server
-    We now use a future date - Jan 1 2099 - for test files,
-    which can thus be run through the same workflow
+	• Until Feb 2022, there was a test source folder on the server
+    	We now use a future date - Jan 1 2099 - for test files,
+    	which can thus be run through the same workflow
+	• However: for the September 2024 refactoring of the back end,
+		the test XML drop-folder (source) was reinstated, with both
+		Mac and Windows paths
   -->
+
+  <!-- TEST PATHS, September 2024, Mac and Windows -->
+  <testMacPaths>
+	<sourcePath>/Volumes/Research/Indicators_test_xmls_Sep2024/</sourcePath>
+  	<lookupPath>/Volumes/Data/Indicators/lookup/</lookupPath>
+    <prnFolder>/Volumes/Graphics/Images/2_CUE_Only/</prnFolder>
+    <digFolder>/Volumes/Graphics/Images/1_All_Destinations_In/</digFolder>
+  </testMacPaths>
+
+  <testWinPaths>
+		<sourcePath>/R/Indicators_test_xmls_Sep2024/</sourcePath>
+		<lookupPath>/T/Indicators/lookup/</lookupPath>
+		<prnFolder>/G/Images/2_CUE_Only/</prnFolder>
+		<digFolder>/G/Images/1_All_Destinations_In/</digFolder>
+  </testWinPaths>
 
   <!-- PATHS END -->
 

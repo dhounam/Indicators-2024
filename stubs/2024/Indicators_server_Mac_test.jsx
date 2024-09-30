@@ -1,6 +1,5 @@
 ﻿//	Indicators: "stub" JS file for TESTING server version of Indicators, using '20990101' datestamp
-
-// NOTE: THIS STUB HAS NOT BEEN NETWORK TESTED
+// Mac version
 
 // Include SERVER copy of Indicators_2023.jsx:
 #include "/Volumes/Data/Indicators/Indicators.jsx"

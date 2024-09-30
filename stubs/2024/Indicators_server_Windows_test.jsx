@@ -1,8 +1,6 @@
 ﻿// Indicators: "stub" JS file for TESTING over network, using '20990101' datestamp
 // Windows version
 
-// NOTE: THIS STUB HAS NOT BEEN NETWORK TESTED
-
 // Include SERVER copy of Indicators_2023.jsx:
 #include "/T/Indicators/Indicators.jsx"
 

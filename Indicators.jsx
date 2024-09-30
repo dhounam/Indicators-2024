@@ -20,6 +20,8 @@
 
   Update March'23 to delete rogue Haver source string attached to
   footnote of print Ecodata and digital Ecodata1 tables
+
+  Update Sep'24 directs tests to new folder on Research/R: for raw XMLs
   
   As of 2022, only three tables are drawn: ECODATA, MARKETS and COMMODITIES
   However, references persist in the code to the redundant POLL, etc
@@ -240,6 +242,8 @@ var g_rStart;
 //	I'm processing a "live" XML file, outputting to the workflow...
 // 	...and I use the "serverMacPaths" or "serverWinPaths" node of the config file...
 //	 ...depending on the Mac/Windows flag set in the stub file
+// As of Sep'24, the TEST flag also redirects source path to the test XML drop folder
+// using "testMacPaths" or "testWindPaths" node
 var g_isLocal;
 // MAC/WINDOWS flag
 var g_isMac;
@@ -418,6 +422,7 @@ function decodeConfigXML(o)
 	// Paths
   // There was previous provision for a separate test path structure. That was ditched early 2022
   // in favour of datestamping test files to 20990101
+  // *** But see below for reintroduction of test paths, Sep'24
   // if (g_isTest) {
   //   // Test
   //   if (g_isMac) {
@@ -443,6 +448,19 @@ function decodeConfigXML(o)
       g_prnFolder = o.localPaths.prnFolder.toString();
       // g_webFolder = o.localPaths.webFolder.toString();
       g_digFolder = o.localPaths.digFolder.toString();
+  } else if (g_isTest) {
+		// Sep'24: test files from test folder
+	if (g_isMac) {
+        g_sourcePath = o.testMacPaths.sourcePath.toString();
+        g_lookupPath = o.testMacPaths.lookupPath.toString();
+        g_prnFolder = o.testMacPaths.prnFolder.toString();
+        g_digFolder = o.testMacPaths.digFolder.toString();
+      } else {
+        g_sourcePath = o.testWinPaths.sourcePath.toString();
+        g_lookupPath = o.testWinPaths.lookupPath.toString();
+        g_prnFolder = o.testWinPaths.prnFolder.toString();
+        g_digFolder = o.testWinPaths.digFolder.toString();
+    }
   } else {
       // Live paths, input from Research server, output to Graphics for Mac and Windows
       if (g_isMac) {
