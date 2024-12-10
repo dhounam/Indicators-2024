@@ -7,24 +7,16 @@
   Revised file locations, 2022
   Remove Ilex component dependencies, April-May 2022
   Cleaning up, August 2022
-  Rationalise various inferential string fixes, August'24
-
-  *******************************************************
-  I did some further rationalisation during February 2023
-  *** THIS VERSION IS NOT LIVE ***
-  As of Feb'23 the 'live' version is working perfectly well, so
-  why fiddle?
-  *This version* goes to the Git repo for checking and use IF
-  further changes to the Indicators process are required.
-  *******************************************************
-
-  Update March'23 to delete rogue Haver source string attached to
-  footnote of print Ecodata and digital Ecodata1 tables
-
-  Update Sep'24 directs tests to new folder on Research/R: for raw XMLs
   
   As of 2022, only three tables are drawn: ECODATA, MARKETS and COMMODITIES
   However, references persist in the code to the redundant POLL, etc
+
+  Update March'23 to delete rogue Haver source string attached to
+  footnote of print Ecodata and digital Ecodata1 tables. 
+  Rationalise various inferential string fixes, August'24
+  Further tweak Dec'24 to insert 'Moscow Exchange' in Markets sources
+
+  Update Sep'24 directs tests to new folder on Research/R: for raw XMLs
 
 	"Stub" file passes 3 args
 		isLocal to use local config file and paths
@@ -3580,6 +3572,8 @@ function doInferentialFixes() {
   var nasCompString = 'NAS Comp';
   // Header correction for ECODATA/1
   var latestString = 'latest, %';
+  // For Markets, Dec'24, insert:
+  var moscowExchange = 'Moscow Exchange; '
 
   // MARKETS (print)
   if (id == 'tabMARKETSPRINT') {
@@ -3588,11 +3582,13 @@ function doInferentialFixes() {
     // Second line of data, change ‘NAScomp’ to ‘NAS Comp’,
     // so that item reads: ‘United States NAS Comp’
     g_dataXMLObj.data.dataitems[1].dataitem[1].@value = nasCompString;
-  }
-  // MARKETS (digital).
-  if (id == 'tabMARKETSDEVICES') {
-    // See just above
+    g_dataXMLObj.source = insertMoscowExchange(g_dataXMLObj.source, moscowExchange)
+}
+// MARKETS (digital).
+if (id == 'tabMARKETSDEVICES') {
+	// See just above
     g_dataXMLObj.data.dataitems[1].dataitem[1].@value = nasCompString;
+	g_dataXMLObj.source = insertMoscowExchange(g_dataXMLObj.source, moscowExchange)
   }
   // ECODATA
   // ECODATA & ECODATA2 headers change 'latest,%' to 'latest, %'
@@ -3629,3 +3625,17 @@ function deleteRogueSourceString(fStr, rogueSourceString) {
   return fStr;
 }
 // DELETE ROGUE SOURCE STRING ends
+
+// INSERT MOSCOW EXCHANGE
+// Called from doInferentialFixes to insert 'Moscow Exchange'
+// in Markets (200/201) sources
+function insertMoscowExchange(sStr, meStr) {
+	// We want to shove it in front of 'Standard'
+	var result = sStr;
+	var pos = sStr.indexOf('Standard');
+	if (pos >= 0) {
+		result = sStr.slice(0, pos) + meStr + sStr.slice(pos);
+	}
+	return result;
+}
+// INSERT MOSCOW EXCHANGE ends
