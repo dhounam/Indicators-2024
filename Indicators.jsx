@@ -3582,13 +3582,16 @@ function doInferentialFixes() {
     // Second line of data, change ‘NAScomp’ to ‘NAS Comp’,
     // so that item reads: ‘United States NAS Comp’
     g_dataXMLObj.data.dataitems[1].dataitem[1].@value = nasCompString;
-    g_dataXMLObj.source = insertMoscowExchange(g_dataXMLObj.source, moscowExchange)
+    g_dataXMLObj.source = insertMoscowExchange(g_dataXMLObj.source, moscowExchange);
+	// Comm'd out: end-of-previous_year dates in headers
+	// fixMarketsPreviousYearDates();
 }
 // MARKETS (digital).
 if (id == 'tabMARKETSDEVICES') {
 	// See just above
     g_dataXMLObj.data.dataitems[1].dataitem[1].@value = nasCompString;
-	g_dataXMLObj.source = insertMoscowExchange(g_dataXMLObj.source, moscowExchange)
+	g_dataXMLObj.source = insertMoscowExchange(g_dataXMLObj.source, moscowExchange);
+	// fixMarketsPreviousYearDates();
   }
   // ECODATA
   // ECODATA & ECODATA2 headers change 'latest,%' to 'latest, %'
@@ -3639,3 +3642,37 @@ function insertMoscowExchange(sStr, meStr) {
 	return result;
 }
 // INSERT MOSCOW EXCHANGE ends
+
+// FIX MARKETS PREVIOUS YEAR DATES
+function fixMarketsPreviousYearDates() {
+	var dateNow = new Date();
+	// Get the previous year:
+	var lastYear = dateNow.getFullYear() -1;
+	// But if it's still January, jump back another year:
+	if (dateNow.getMonth() < 1) {
+		lastYear--;
+	}
+
+	// Default end-of-year
+	var lastDate = new Date(lastYear, 11, 31);    
+	var lastDay = 'Dec 31st';
+    // Get day of week
+    var dayOfWeek = lastDate.getDay();
+    // If weekend, use Friday
+    if (dayOfWeek == 6) {
+		// Saturday
+		lastDay = 'Dec 30th';
+    } else if (dayOfWeek == 0) {
+		// Sunday
+		lastDay = 'Dec 29th';
+    }
+
+	// Set header values
+	g_dataXMLObj.root.headers.header3.h[2] = lastDay;
+	g_dataXMLObj.root.headers.header3.h[5] = lastDay;
+	g_dataXMLObj.root.headers.header4.h[3] = lastYear;
+	g_dataXMLObj.root.headers.header4.h[6] = lastYear;
+	g_dataXMLObj.root.headers2.header22.h[0] = lastDay;
+	g_dataXMLObj.root.headers2.header23.h[2] = lastYear;
+}
+// FIX MARKETS PREVIOUS YEAR DATES ends

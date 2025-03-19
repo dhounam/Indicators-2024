@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- COMMODITIES: all platforms ("normal" version) (INT401) -->
+<!-- COMMODITIES: all platforms ("normal" version) (INT400) -->
 
 <indicators>
 
@@ -99,7 +99,7 @@
 			<fill>grey</fill>
       <exists>true</exists>
 		  <subRanges>
-				<subRange position="159.9" alignment="Right" />
+				<subRange position="159.8" alignment="Right" />
 		  </subRanges>
 	  </header>
 
@@ -126,7 +126,7 @@
 				<subRange position="77" alignment="Right" fill="grey" />
 				<subRange position="104" alignment="Right" fill="grey" />
 				<subRange position="130" alignment="Right" fill="grey" />
-				<subRange position="159.9" alignment="Right" fill="grey" />
+				<subRange position="159.8" alignment="Right" fill="grey" />
 		  </subRanges>
 	  </header>
 
