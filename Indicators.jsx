@@ -14,7 +14,8 @@
   Update March'23 to delete rogue Haver source string attached to
   footnote of print Ecodata and digital Ecodata1 tables. 
   Rationalise various inferential string fixes, August'24
-  Further tweak Dec'24 to insert 'Moscow Exchange' in Markets sources
+  Dec'24: insert 'Moscow Exchange' in Markets sources
+  May'25: remove full stops form sources and footnotes
 
   Update Sep'24 directs tests to new folder on Research/R: for raw XMLs
 
@@ -62,7 +63,9 @@ const c_fileID = "_INT";
 const c_extension = ".eps";
 
 // Two spaces between footnote and source strings
-const c_betweenFootnoteAndSource = ".  ";
+// const c_betweenFootnoteAndSource = ".  ";
+// May'25: no full stop
+const c_betweenFootnoteAndSource = "  ";
 // New-line marker in source
 // New-line substitutions in footnotes
 // Allows for "@" and "&" prefix
@@ -3562,7 +3565,9 @@ function doInferentialFixes() {
   // All the strings to play with
   // Inferential: rogue source string to delete from Ecodata footnotes
   // NOTE: in the current live version (Sep'24), this string is:
-  var rogueSourceString = ' Source Source: Haver Analytics ';
+  // var rogueSourceString = ' Source Source: Haver Analytics ';
+  // Changed May'25
+  var rogueSourceString = 'Source Source: Haver Analytics';
   // However, the test version is currently sending it without the concluding space character:
   // var rogueSourceString = ' Source Source: Haver Analytics';
   //
@@ -3611,6 +3616,10 @@ if (id == 'tabMARKETSDEVICES') {
   if (g_lookupXMLObj.id == 'tabECODATA2') {
     g_dataXMLObj.headers.header5.h[2] = latestString;
   }
+  // For all tables (added May'25)
+  // Delete full stops in footnotes
+  g_dataXMLObj.footnote = deleteFootnoteStops(g_dataXMLObj.footnote);
+
 }
 // DO INFERENTIAL FIXES ends
 
@@ -3676,3 +3685,11 @@ function fixMarketsPreviousYearDates() {
 	g_dataXMLObj.root.headers2.header23.h[2] = lastYear;
 }
 // FIX MARKETS PREVIOUS YEAR DATES ends
+
+// DELETE FOOTNOTE STOPS
+// Remove full stops in footnotes
+// (No stops in source)
+function deleteFootnoteStops(fStr) {
+	return fStr.toString().replace(/\./g, '');
+}
+// DELETE FOOTNOTE STOPS ends
