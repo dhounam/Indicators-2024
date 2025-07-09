@@ -3565,14 +3565,14 @@ function doInferentialFixes() {
   // All the strings to play with
   // Inferential: rogue source string to delete from Ecodata footnotes
   // NOTE: in the current live version (Sep'24), this string is:
-  // var rogueSourceString = ' Source Source: Haver Analytics ';
+  // var haverSourceString = ' Source Source: Haver Analytics ';
   // Changed May'25
-  var rogueSourceString = 'Source Source: Haver Analytics';
-  // However, the test version is currently sending it without the concluding space character:
-  // var rogueSourceString = ' Source Source: Haver Analytics';
+  //   var haverSourceString = 'Source Source: Haver Analytics';
+  // Changed again (!) July'25
+  var haverSourceString = 'Source: Haver Analytics';
   //
   // String appended to footnote in ECODATA and ECODATA1
-  var ecoDataExtraNote = ' Note: Euro area consumer prices are harmonised.'
+  var ecoDataExtraNote = ' Note: Euro-area consumer prices are harmonised.'
   // String in MARKETS data
   var nasCompString = 'NAS Comp';
   // Header correction for ECODATA/1
@@ -3604,13 +3604,15 @@ if (id == 'tabMARKETSDEVICES') {
   if (g_lookupXMLObj.id == 'tabECODATA') {
     // NOTE: EcoData tables don't have a 'root' node
     g_dataXMLObj.headers.header4.h[8] = latestString;
-    g_dataXMLObj.footnote = deleteRogueSourceString(g_dataXMLObj.footnote, rogueSourceString);
+    g_dataXMLObj.footnote = deleteRogueSourceString(g_dataXMLObj.footnote, haverSourceString);
     g_dataXMLObj.footnote += ecoDataExtraNote;
-    // alert(g_dataXMLObj.footnote)
-  }
-  if (g_lookupXMLObj.id == 'tabECODATA1') {
-    // g_dataXMLObj.headers.header5.h[2] = latestString;
-    g_dataXMLObj.footnote = deleteRogueSourceString(g_dataXMLObj.footnote, rogueSourceString);
+	// And create a source node from scratch with the Haver string
+	createSourceNode(haverSourceString);
+}
+if (g_lookupXMLObj.id == 'tabECODATA1') {
+	// g_dataXMLObj.headers.header5.h[2] = latestString;
+	// July'25: Haver string is now somehow prefixed to footnote, so leave it alone
+    // g_dataXMLObj.footnote = deleteRogueSourceString(g_dataXMLObj.footnote, haverSourceString);
     g_dataXMLObj.footnote += ecoDataExtraNote;
   }
   if (g_lookupXMLObj.id == 'tabECODATA2') {
@@ -3626,17 +3628,24 @@ if (id == 'tabMARKETSDEVICES') {
 // DELETE ROGUE SOURCE STRING
 // Called from doInferentialFixes to remove a rogue source
 // string that keeps getting appended to EcoData/EcoData1 raw XML
-function deleteRogueSourceString(fStr, rogueSourceString) {
+function deleteRogueSourceString(fStr, haverSourceString) {
   // Note assumption that string is last in footnote
   // Look for string
-  var sFound = fStr.search(rogueSourceString);
+  var sFound = fStr.search(haverSourceString);
   if (sFound >= 0) {
-	  var start = fStr.indexOf(rogueSourceString);
+	  var start = fStr.indexOf(haverSourceString);
 	  fStr = fStr.slice(0, start);
 	}
   return fStr;
 }
 // DELETE ROGUE SOURCE STRING ends
+
+// CREATE SOURCE NODE
+// For ECODATA1, create a source node with the Haver string, from scratch
+function createSourceNode(sStr) {
+	g_dataXMLObj.source = sStr;
+}
+// CREATE SOURCE NODE ends
 
 // INSERT MOSCOW EXCHANGE
 // Called from doInferentialFixes to insert 'Moscow Exchange'
