@@ -333,7 +333,7 @@
 			<subRange position="264" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" rLeft="248" rWidth="20" />
 			<subRange position="323" alignment="Right" isNumber="true" showPlus="false" dPlaces="1" overruleDPs="false" rLeft="307" rWidth="20" />
 			<subRange position="383.4" alignment="Right" isNumber="true" dPlaces="1" showPlus="false" overruleDPs="true" rLeft="367" rWidth="20" />
-			<subRange position="440" alignment="Right" isNumber="true" dPlaces="1" showPlus="false" overruleDPs="true" />
+			<subRange position="440" alignment="Right" isNumber="true" dPlaces="0" showPlus="false" overruleDPs="false" />
 			<subRange position="470" alignment="Right" isNumber="true" dPlaces="2" showPlus="false" overruleDPs="true" />
 			<subRange position="500" alignment="Right" isNumber="true" dPlaces="1" showPlus="false" overruleDPs="true" rLeft="484" rWidth="20" />
 		</subRanges>

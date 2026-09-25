@@ -15,14 +15,15 @@
   footnote of print Ecodata and digital Ecodata1 tables. 
   Rationalise various inferential string fixes, August'24
   Dec'24: insert 'Moscow Exchange' in Markets sources
-  May'25: remove full stops form sources and footnotes
+  May'25: remove full stops from sources and footnotes
+  Sep'26: remove only *final* full stop from footnotes, not all full stops
 
   Update Sep'24 directs tests to new folder on Research/R: for raw XMLs
 
 	"Stub" file passes 3 args
 		isLocal to use local config file and paths
 		isMac for Windows/Mac paths
-    isTest -- if true, override file datestamp with Jan 1 2099 (20990101)
+    	isTest -- if true, override file datestamp with Jan 1 2099 (20990101)
 
 	STRUCTURE:
 		DECLARATIONS
@@ -3696,9 +3697,18 @@ function fixMarketsPreviousYearDates() {
 // FIX MARKETS PREVIOUS YEAR DATES ends
 
 // DELETE FOOTNOTE STOPS
-// Remove full stops in footnotes
+// Originally removed ALL full stops in footnotes. Mod Sep'26 to
+// remove only *final* full stop.
 // (No stops in source)
 function deleteFootnoteStops(fStr) {
-	return fStr.toString().replace(/\./g, '');
+	// return fStr.toString().replace(/\./g, '');
+	// Remove trailing whitespace
+    fStr = fStr.toString().replace(/\s+$/, "");
+    if (fStr.charAt(fStr.length - 1) === ".") {
+		// Remove the final full stop
+        fStr = fStr.substring(0, fStr.length - 1);
+    }
+    return fStr;
 }
 // DELETE FOOTNOTE STOPS ends
+
